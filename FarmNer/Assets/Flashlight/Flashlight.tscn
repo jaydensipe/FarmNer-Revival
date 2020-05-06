@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://FarmNer/Assets/Flashlight/flashlight.png" type="Texture" id=1]
+[ext_resource path="res://FarmNer/Sounds/FlashLight/FlashLightSoundScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://FarmNer/Assets/Flashlight/Flashlight.gd" type="Script" id=3]
+[ext_resource path="res://FarmNer/Assets/Textures/flashlightBeam.png" type="Texture" id=4]
+
+[node name="Flashlight" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 0.785398
+texture = ExtResource( 1 )
+offset = Vector2( 16.9845, -16.9956 )
+
+[node name="Beam" type="Light2D" parent="Sprite"]
+position = Vector2( 1459.47, -1459.47 )
+rotation = -0.785398
+scale = Vector2( 12.3624, 26.7624 )
+texture = ExtResource( 4 )
+color = Color( 0.780392, 0.466667, 0.392157, 1 )
+
+[node name="FlashLightSound" parent="." instance=ExtResource( 2 )]
+position = Vector2( 2064, -0.000244141 )
+scale = Vector2( 12.3624, 26.7624 )

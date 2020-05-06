@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/flashLightOff.wav-c31ff99b6a0d337e975a313c48f04c1b.sample"
+
+[deps]
+
+source_file="res://FarmNer/Sounds/FlashLight/flashLightOff.wav"
+dest_files=[ "res://.import/flashLightOff.wav-c31ff99b6a0d337e975a313c48f04c1b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

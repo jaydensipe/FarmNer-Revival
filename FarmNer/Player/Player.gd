@@ -25,8 +25,13 @@ func get_input():
 	
 	if left || right || up || down:
 		$Sprite.play(animation)
+		
+		if not $FootstepSound/AudioStreamPlayer2D.playing:
+			$FootstepSound/AudioStreamPlayer2D.play()
+		
 	elif !left || !right || !up || !down:
 		$Sprite.play("IdleUp")
+		$FootstepSound/AudioStreamPlayer2D.stop()
 	
 	
 	# Sprinting

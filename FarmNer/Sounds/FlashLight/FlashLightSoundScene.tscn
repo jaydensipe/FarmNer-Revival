@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://FarmNer/Sounds/FlashLight/flashlightOn.wav" type="AudioStream" id=1]
+[ext_resource path="res://FarmNer/Sounds/FlashLight/flashLightOff.wav" type="AudioStream" id=2]
+
+[node name="FlashLightSound" type="Node2D"]
+
+[node name="On" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="Off" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
