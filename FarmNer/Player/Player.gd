@@ -45,7 +45,7 @@ func get_input():
 	
 	velocity = velocity.normalized() * speed * sprintSpeed
 	
-	
+	# Converts direction to string
 
 func direction2str(direction):
 	var angle = direction.angle()
@@ -59,4 +59,22 @@ func direction2str(direction):
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity, Vector2(0, 0))
+
+
+
+func _on_PlayerDetection_area_entered(area):
+	var groups = area.get_groups()
+	if(groups.has("TorchCollision")):
+		$Tween.remove_all()
+		$Tween.interpolate_property($Light2D, "energy", 0.7, 0, 1, Tween.TRANS_SINE, Tween.EASE_IN)
+		$Tween.start()
+		
+
+
+func _on_PlayerDetection_area_exited(area):
+	var groups = area.get_groups()
+	if(groups.has("TorchCollision")):
+		$Tween.remove_all()
+		$Tween.interpolate_property($Light2D, "energy", 0, 0.7, 1, Tween.TRANS_SINE, Tween.EASE_IN)
+		$Tween.start()
 	

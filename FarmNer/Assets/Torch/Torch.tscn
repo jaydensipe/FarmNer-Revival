@@ -1,8 +1,14 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=1]
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=2]
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=3]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.13245, 1 )
+colors = PoolColorArray( 0.123047, 0.123047, 0.123047, 1, 0.742188, 0.742188, 0.742188, 1 )
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.602649, 0.993378 )
@@ -10,6 +16,18 @@ colors = PoolColorArray( 0.968627, 0.803922, 0.0470588, 1, 0.988235, 0.639216, 0
 
 [node name="Torch" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"TorchCollision",
+]]
+position = Vector2( 0.178722, -0.0672455 )
+scale = Vector2( 0.493766, -0.062811 )
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -0.0758514, 1.27417 )
+scale = Vector2( 22.7495, 99.0502 )
+shape = SubResource( 3 )
 
 [node name="Tween" type="Tween" parent="."]
 repeat = true
@@ -28,7 +46,20 @@ texture_scale = 2.04
 color = Color( 0.447059, 0.290196, 0.054902, 1 )
 energy = 1.15
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="SmokeParticle" type="CPUParticles2D" parent="."]
+position = Vector2( -0.905588, -6.3028 )
+rotation = 3.14159
+amount = 4
+lifetime = 0.8
+speed_scale = 0.3
+explosiveness = 0.61
+emission_shape = 1
+emission_sphere_radius = 2.0
+angular_velocity = 464.52
+linear_accel = 6.45
+color_ramp = SubResource( 2 )
+
+[node name="FireParticle" type="CPUParticles2D" parent="."]
 position = Vector2( -1.12303, -3.11386 )
 rotation = 3.11216
 lifetime = 0.6
@@ -39,3 +70,4 @@ emission_shape = 1
 emission_sphere_radius = 1.0
 radial_accel = 15.22
 color_ramp = SubResource( 1 )
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

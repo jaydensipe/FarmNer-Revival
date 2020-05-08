@@ -1,6 +1,5 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://FarmNer/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://FarmNer/Assets/Tileset/GravesAndRocksTileset.tres" type="TileSet" id=3]
 [ext_resource path="res://FarmNer/Assets/Tileset/GrassTileset.tres" type="TileSet" id=4]
@@ -8,7 +7,6 @@
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FarmNer/Assets/Tileset/FencesTileset.tres" type="TileSet" id=7]
 [ext_resource path="res://FarmNer/Sounds/Ambiance/AmbianceScene.tscn" type="PackedScene" id=8]
-[ext_resource path="res://FarmNer/Assets/Flashlight/Flashlight.tscn" type="PackedScene" id=9]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -31,6 +29,7 @@ __meta__ = {
 }
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
+visible = false
 color = Color( 0.0117647, 0, 0.027451, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
@@ -69,13 +68,6 @@ tile_set = ExtResource( 7 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 131072, 1, 0, 131073, 1, 1, 131074, 1, 1, 131075, 1, 1, 131076, 1, 1, 131077, 1, 1, 131078, 1, 4, 131079, 1, 65542, 131080, 1, 65542, 131081, 1, 65542, 131082, 1, 0, 131083, 1, 1, 131084, 1, 1, 131085, 1, 1, 131086, 1, 1, 131087, 1, 1, 131088, 1, 1, 131089, 1, 1, 131090, 1, 1, 131091, 1, 1, 131092, 1, 1, 131093, 1, 1, 131094, 1, 1, 131095, 1, 1, 131096, 1, 1, 131097, 1, 1, 131098, 1, 1, 131099, 1, 1, 131100, 1, 1, 131101, 1, 1, 131102, 1, 1, 131103, 1, 1, 131104, 1, 1, 131105, 1, 1, 131106, 1, 1, 131107, 1, 1, 131108, 1, 1, 131109, 1, 1, 131110, 1, 1, 131111, 1, 1, 131112, 1, 1, 131113, 1, 1, 131114, 1, 1, 131115, 1, 1, 131116, 1, 1, 131117, 1, 1, 131118, 1, 1, 131119, 1, 1, 131120, 1, 1, 131121, 1, 1, 131122, 1, 1, 131123, 1, 1, 131124, 1, 1, 131125, 1, 1, 131126, 1, 1, 131127, 1, 1, 131128, 1, 1, 131129, 1, 1, 131130, 1, 1, 131131, 1, 1, 131132, 1, 1, 131133, 1, 1, 131134, 1, 1, 131135, 1, 2, 2162688, 1, 0, 2162689, 1, 1, 2162690, 1, 1, 2162691, 1, 1, 2162692, 1, 1, 2162693, 1, 1, 2162694, 1, 1, 2162695, 1, 1, 2162696, 1, 1, 2162697, 1, 1, 2162698, 1, 1, 2162699, 1, 1, 2162700, 1, 1, 2162701, 1, 1, 2162702, 1, 1, 2162703, 1, 1, 2162704, 1, 1, 2162705, 1, 1, 2162706, 1, 4, 2162713, 1, 0, 2162714, 1, 1, 2162715, 1, 1, 2162716, 1, 1, 2162717, 1, 1, 2162718, 1, 1, 2162719, 1, 1, 2162720, 1, 1, 2162721, 1, 1, 2162722, 1, 1, 2162723, 1, 1, 2162724, 1, 1, 2162725, 1, 1, 2162726, 1, 1, 2162727, 1, 1, 2162728, 1, 1, 2162729, 1, 1, 2162730, 1, 1, 2162731, 1, 1, 2162732, 1, 1, 2162733, 1, 1, 2162734, 1, 1, 2162735, 1, 1, 2162736, 1, 1, 2162737, 1, 1, 2162738, 1, 1, 2162739, 1, 1, 2162740, 1, 1, 2162741, 1, 1, 2162742, 1, 1, 2162743, 1, 1, 2162744, 1, 1, 2162745, 1, 1, 2162746, 1, 1, 2162747, 1, 1, 2162748, 1, 1, 2162749, 1, 1, 2162750, 1, 1, 2162751, 1, 2 )
-
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 144, 56 )
-
-[node name="Flashlight" parent="Player" instance=ExtResource( 9 )]
-position = Vector2( 2.97266, 1.18213 )
-scale = Vector2( 0.0469552, 0.0469552 )
 
 [node name="Lighting" type="Node2D" parent="."]
 __meta__ = {
@@ -119,7 +111,7 @@ position = Vector2( 480, 424 )
 position = Vector2( 352, 488 )
 
 [node name="Torch13" parent="Lighting" instance=ExtResource( 6 )]
-position = Vector2( 328, 592 )
+position = Vector2( 320, 576 )
 
 [node name="Torch14" parent="Lighting" instance=ExtResource( 6 )]
 position = Vector2( 168, 600 )

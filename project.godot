@@ -17,9 +17,13 @@ _global_script_class_icons={
 
 config/name="FarmNer Revival"
 config/description="Find out the truth about the FarmNer! ;)."
-run/main_scene="res://FarmNer/Levels/MainLevel.tscn"
+run/main_scene="res://FarmNer/GameManager/Game.tscn"
 boot_splash/bg_color=Color( 0.180392, 0.121569, 0.117647, 1 )
 config/icon="res://icon.png"
+
+[display]
+
+window/vsync/use_vsync=false
 
 [input]
 
