@@ -1,7 +1,7 @@
 extends Node2D
 
 var mousePos
-var flashlightOn = false
+var flashlightOn = true
 
 func _physics_process(delta):
 	
