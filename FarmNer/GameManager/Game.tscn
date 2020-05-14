@@ -23,7 +23,6 @@ z_index = 3
 [node name="Flashlight" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 2.973, 1.182 )
 scale = Vector2( 0.047, 0.047 )
-[connection signal="levelLoadStartingLevel" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_levelLoadStartingLevel"]
 [connection signal="onPlayerEnterLvl2" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_onPlayerEnterLvl2"]
 [connection signal="onPlayerEnterLvl3" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_onPlayerEnterLvl3"]
 [connection signal="Lvl1to2" from="Player/BlackFade" to="." method="_on_BlackFade_Lvl1to2"]

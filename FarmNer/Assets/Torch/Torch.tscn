@@ -1,21 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=1]
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=2]
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.gd" type="Script" id=3]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 1.69661, 2.0805 )
+
+[sub_resource type="CircleShape2D" id=1]
 
 [sub_resource type="Gradient" id=2]
 offsets = PoolRealArray( 0.13245, 1 )
 colors = PoolColorArray( 0.123047, 0.123047, 0.123047, 1, 0.742188, 0.742188, 0.742188, 1 )
 
-[sub_resource type="Gradient" id=1]
+[sub_resource type="Gradient" id=3]
 offsets = PoolRealArray( 0, 0.602649, 0.993378 )
 colors = PoolColorArray( 0.968627, 0.803922, 0.0470588, 1, 0.988235, 0.639216, 0.027451, 1, 0.368627, 0.219608, 0.00784314, 1 )
 
 [node name="Torch" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( -0.975626, 4.91565 )
+scale = Vector2( 0.720002, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="." groups=[
 "TorchCollision",
@@ -27,7 +37,7 @@ monitoring = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( -0.0758514, 1.27417 )
 scale = Vector2( 22.7495, 99.0502 )
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="Tween" type="Tween" parent="."]
 repeat = true
@@ -69,5 +79,5 @@ randomness = 0.14
 emission_shape = 1
 emission_sphere_radius = 1.0
 radial_accel = 15.22
-color_ramp = SubResource( 1 )
+color_ramp = SubResource( 3 )
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

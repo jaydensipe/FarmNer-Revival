@@ -3,10 +3,9 @@ extends Node2D
 var mousePos
 var flashlightOn = true
 
-func _physics_process(delta):
+func _process(delta):
 	
 	# Turns flashlight on & off
-	
 	if Input.is_action_just_pressed("RightClick") && !flashlightOn:
 		flashlightOn = true
 		$FlashLightSound/Off.play()

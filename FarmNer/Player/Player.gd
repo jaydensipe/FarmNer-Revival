@@ -12,7 +12,6 @@ func get_input():
 	velocity = Vector2(0, 0)
 	
 	# Movement & Animation
-	
 	var left = Input.is_action_pressed("Left")
 	var right = Input.is_action_pressed("Right")
 	var up = Input.is_action_pressed("Up")
@@ -35,7 +34,6 @@ func get_input():
 	
 	
 	# Sprinting
-	
 	if (Input.is_action_pressed('Shift')):
 		sprintSpeed = 1.25
 		$Sprite.speed_scale = 3
@@ -45,8 +43,7 @@ func get_input():
 	
 	velocity = velocity.normalized() * speed * sprintSpeed
 	
-	# Converts direction to string
-
+# Converts direction to string
 func direction2str(direction):
 	var angle = direction.angle()
 	if angle < 0:
@@ -54,13 +51,9 @@ func direction2str(direction):
 	var index = round(angle / PI * 4)
 	return directions[index]
 
-
-
 func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity, Vector2(0, 0))
-
-
 
 func _on_PlayerDetection_area_entered(area):
 	var groups = area.get_groups()
@@ -69,8 +62,6 @@ func _on_PlayerDetection_area_entered(area):
 		$Tween.interpolate_property($Light2D, "energy", 0.7, 0, 1, Tween.TRANS_SINE, Tween.EASE_IN)
 		$Tween.start()
 		
-
-
 func _on_PlayerDetection_area_exited(area):
 	var groups = area.get_groups()
 	if(groups.has("TorchCollision")):

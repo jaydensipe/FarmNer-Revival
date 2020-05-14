@@ -1,0 +1,157 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://FarmNer/Assets/Torch/Torch.tscn" type="PackedScene" id=1]
+[ext_resource path="res://FarmNer/Sounds/Ambiance/AmbianceScene.tscn" type="PackedScene" id=2]
+[ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=3]
+[ext_resource path="res://FarmNer/Assets/Tileset/GrassTileset.tres" type="TileSet" id=4]
+[ext_resource path="res://FarmNer/Assets/Tileset/RockTileset.tres" type="TileSet" id=5]
+[ext_resource path="res://FarmNer/Assets/Tileset/FencesTileset.tres" type="TileSet" id=6]
+[ext_resource path="res://FarmNer/Assets/Tileset/GravesAndRocksTileset.tres" type="TileSet" id=7]
+[ext_resource path="res://FarmNer/Levels/StartingLevel.gd" type="Script" id=8]
+
+[sub_resource type="Environment" id=1]
+background_mode = 4
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="RectangleShape2D" id=2]
+
+[node name="Level2" type="Node2D"]
+script = ExtResource( 8 )
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="Level"]
+margin_left = -193.0
+margin_top = -136.0
+margin_right = 1198.0
+margin_bottom = 696.0
+color = Color( 0.392157, 0.513726, 0.360784, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="Level"]
+visible = false
+color = Color( 0.0117647, 0, 0.027451, 1 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
+environment = SubResource( 1 )
+
+[node name="AmbianceAudio" parent="Level" instance=ExtResource( 2 )]
+
+[node name="Tiles" type="Node2D" parent="."]
+
+[node name="Rocks" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Grass" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="Roads" type="TileMap" parent="Tiles"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="RocksAndGraves" type="TileMap" parent="Tiles"]
+z_index = 2
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 32
+cell_custom_transform = Transform2D( 16, 0, 0, 16, 0, 0 )
+format = 1
+tile_data = PoolIntArray( 1376285, 21, 0, 1441822, 21, 0, 1507357, 21, 0, 1572892, 21, 0, 1572893, 21, 0 )
+
+[node name="Fence" type="TileMap" parent="Tiles"]
+z_index = 2
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 1310720, 1, 0, 1310721, 1, 1, 1310722, 1, 1, 1310723, 1, 1, 1310724, 1, 1, 1310725, 1, 1, 1310726, 1, 1, 1310727, 1, 1, 1310728, 1, 1, 1310729, 1, 1, 1310730, 1, 1, 1310731, 1, 1, 1310732, 1, 1, 1310733, 1, 1, 1310734, 1, 1, 1310735, 1, 1, 1310736, 1, 1, 1310737, 1, 1, 1310738, 1, 1, 1310739, 1, 1, 1310740, 1, 1, 1310741, 1, 1, 1310742, 1, 1, 1310743, 1, 1, 1310744, 1, 1, 1310745, 1, 1, 1310746, 1, 1, 1310747, 1, 1, 1310748, 1, 1, 1310749, 1, 1, 1310750, 1, 4, 1376256, -1073741823, 65539, 1441792, -1073741823, 65539, 1507328, -1073741823, 65539, 1572864, -1073741823, 65539, 1638400, -1073741823, 65539, 1638414, 1, 65541, 1638415, 1, 65537, 1638416, 1, 65537, 1638417, 1, 65537, 1638418, 1, 65537, 1638419, 1, 65537, 1638420, 1, 65537, 1638421, 1, 65537, 1638422, 1, 65537, 1638423, 1, 65537, 1638424, 1, 65537, 1638425, 1, 65537, 1638426, 1, 65537, 1638427, 1, 65537, 1638428, 1, 65537, 1638429, 1, 65537, 1638430, 1, 65540, 1703936, -1073741823, 65539, 1703950, -1610612735, 65539, 1769472, -1073741823, 65539, 1769486, -1610612735, 65539, 1835022, -1610612735, 65539, 1900558, -1610612735, 65539, 1966094, -1610612735, 65539, 2031616, -1073741823, 65539, 2031630, -1610612735, 65539, 2097152, -1073741823, 65539, 2097166, -1610612735, 65539, 2162688, 1, 0, 2162689, 1, 1, 2162690, 1, 1, 2162691, 1, 1, 2162692, 1, 1, 2162693, 1, 1, 2162694, 1, 1, 2162695, 1, 1, 2162696, 1, 1, 2162697, 1, 1, 2162698, 1, 1, 2162699, 1, 1, 2162700, 1, 1, 2162701, 1, 1, 2162702, 1, 2 )
+
+[node name="Lighting" type="Node2D" parent="."]
+z_index = 2
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Torch" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 248, 88 )
+
+[node name="Torch2" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 120, 72 )
+
+[node name="Torch3" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 312, 168 )
+
+[node name="Torch4" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 440, 136 )
+
+[node name="Torch5" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 696, 128 )
+
+[node name="Torch6" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 816, 208 )
+
+[node name="Torch7" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 944, 264 )
+
+[node name="Torch8" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 1000, 424 )
+
+[node name="Torch9" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 560, 240 )
+
+[node name="Torch10" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 432, 312 )
+
+[node name="Torch11" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 480, 424 )
+
+[node name="Torch12" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 352, 488 )
+
+[node name="Torch13" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 320, 576 )
+
+[node name="Torch14" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 168, 600 )
+
+[node name="Torch15" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 128, -24 )
+
+[node name="Torch16" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 16, -56 )
+
+[node name="Torch17" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 616, 152 )
+
+[node name="Torch18" parent="Lighting" instance=ExtResource( 1 )]
+position = Vector2( 896, 360 )
+
+[node name="BlackFadeZones" type="Node2D" parent="."]
+
+[node name="Zone1" type="Area2D" parent="BlackFadeZones"]
+position = Vector2( 982.475, 459.843 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone1"]
+position = Vector2( -0.883301, 0.0762329 )
+scale = Vector2( 4.85258, 4.14327 )
+shape = SubResource( 2 )
+
+[node name="Zone2" type="Area2D" parent="BlackFadeZones"]
+position = Vector2( 350.531, 525.445 )
+scale = Vector2( 1.17262, 1.16204 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone2"]
+position = Vector2( 0.513489, 0.774597 )
+scale = Vector2( 4.85258, 4.14327 )
+shape = SubResource( 2 )
+[connection signal="tree_entered" from="." to="." method="_on_StartingLevel_tree_entered"]
+[connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
+[connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]
