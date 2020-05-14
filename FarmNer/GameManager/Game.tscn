@@ -4,9 +4,10 @@
 [ext_resource path="res://FarmNer/Player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FarmNer/Assets/Flashlight/Flashlight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FarmNer/Assets/BlackFade/BlackFade.tscn" type="PackedScene" id=4]
-[ext_resource path="res://FarmNer/Assets/BlackFade/BlackFade.gd" type="Script" id=5]
+[ext_resource path="res://FarmNer/GameManager/Game.gd" type="Script" id=6]
 
 [node name="Game" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="StartingLevel" parent="." instance=ExtResource( 1 )]
 
@@ -18,10 +19,11 @@ z_index = 1
 position = Vector2( -168.023, -91.9354 )
 scale = Vector2( 0.598438, 0.628593 )
 z_index = 3
-script = ExtResource( 5 )
 
 [node name="Flashlight" parent="Player" instance=ExtResource( 3 )]
 position = Vector2( 2.973, 1.182 )
 scale = Vector2( 0.047, 0.047 )
 [connection signal="levelLoadStartingLevel" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_levelLoadStartingLevel"]
-[connection signal="onPlayerEnterBlack" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_onPlayerEnterBlack"]
+[connection signal="onPlayerEnterLvl2" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_onPlayerEnterLvl2"]
+[connection signal="onPlayerEnterLvl3" from="StartingLevel" to="Player/BlackFade" method="_on_StartingLevel_onPlayerEnterLvl3"]
+[connection signal="Lvl1to2" from="Player/BlackFade" to="." method="_on_BlackFade_Lvl1to2"]
