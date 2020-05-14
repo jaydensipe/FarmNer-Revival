@@ -1,17 +1,17 @@
 extends Node2D
 
 signal Lvl1to2
-var lvl
+var lvl = 0
 
 func _on_StartingLevel_onPlayerEnterLvl2():
 	$AnimationPlayer.play("FadeOut")
+	lvl = 2
 	$Timer.start()
-	var lvl = 2
 
 func _on_StartingLevel_onPlayerEnterLvl3():
 	$AnimationPlayer.play("FadeOut")
+	lvl = 3
 	$Timer.start()
-	var lvl = 3
 	
 func _on_StartingLevel_levelLoadStartingLevel():
 	$AnimationPlayer.play("FadeIn")
@@ -21,9 +21,10 @@ func _on_Timer_timeout():
 	match lvl:
 		2:
 			emit_signal("Lvl1to2")
-			$AnimationPlayer.play("FadeOut")
+			$AnimationPlayer.play("FadeIn")
 		3:
 			print(3)
+		
 	
 
 
