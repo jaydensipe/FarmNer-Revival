@@ -1,5 +1,5 @@
 extends Node2D
-   
+
 func _process(delta):
 
 	# Makes torch flicker

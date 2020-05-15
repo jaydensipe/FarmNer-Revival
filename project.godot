@@ -17,7 +17,7 @@ _global_script_class_icons={
 
 config/name="FarmNer Revival"
 config/description="Find out the truth about the FarmNer! ;)."
-run/main_scene="res://FarmNer/GameManager/Game.tscn"
+run/main_scene="res://FarmNer/Assets/MainMenu/MainMenu.tscn"
 boot_splash/image="res://FarmNer/Assets/Textures/splashart.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"

@@ -30,7 +30,6 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 0.178722, -0.0672455 )
 scale = Vector2( 0.493766, -0.062811 )
-monitoring = false
 collision_layer = 262144
 collision_mask = 262144
 

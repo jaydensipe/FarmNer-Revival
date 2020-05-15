@@ -2,6 +2,10 @@ extends Node2D
 
 var level2 = preload ("res://FarmNer/Levels/Level2.tscn")
 
+func _ready():
+	$AmbianceAudio/Tween.interpolate_property($AmbianceAudio/AudioStreamPlayer, "volume_db", -50.0, $AmbianceAudio/AudioStreamPlayer.volume_db, 4.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+	$AmbianceAudio/Tween.start()
+
 
 #Changes from Lvl 1 -> 2
 func _on_BlackFade_Lvl1to2():

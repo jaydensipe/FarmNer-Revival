@@ -152,6 +152,5 @@ scale = Vector2( 1.17262, 1.16204 )
 position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
 shape = SubResource( 2 )
-[connection signal="tree_entered" from="." to="." method="_on_StartingLevel_tree_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]

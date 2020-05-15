@@ -95,12 +95,13 @@ script = ExtResource( 1 )
 margin_right = 565.0
 margin_bottom = 338.0
 mouse_filter = 2
-color = Color( 0, 0, 0, 0 )
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 0.5
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
 

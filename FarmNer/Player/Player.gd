@@ -35,7 +35,7 @@ func get_input():
 	
 	# Sprinting
 	if (Input.is_action_pressed('Shift')):
-		sprintSpeed = 1.25
+		sprintSpeed = 1.15
 		$Sprite.speed_scale = 3
 	elif (Input.is_action_just_released('Shift')):
 		sprintSpeed = 1.0
@@ -55,13 +55,13 @@ func _physics_process(delta):
 	get_input()
 	velocity = move_and_slide(velocity, Vector2(0, 0))
 
-func _on_PlayerDetection_area_entered(area):
-		$Tween.remove_all()
-		$Tween.interpolate_property($Light2D, "energy", 0.7, 0, 1, Tween.TRANS_SINE, Tween.EASE_IN)
-		$Tween.start()
-		
-func _on_PlayerDetection_area_exited(area):
-		$Tween.remove_all()
-		$Tween.interpolate_property($Light2D, "energy", 0, 0.7, 0.5, Tween.TRANS_SINE, Tween.EASE_IN)
-		$Tween.start()
+#func _on_PlayerDetection_area_entered(area):
+#		$Tween.remove_all()
+#		$Tween.interpolate_property($Light2D, "energy", 0.7, 0, 1, Tween.TRANS_SINE, Tween.EASE_IN)
+#		$Tween.start()
+#
+#func _on_PlayerDetection_area_exited(area):
+#		$Tween.remove_all()
+#		$Tween.interpolate_property($Light2D, "energy", 0, 0.7, 0.5, Tween.TRANS_SINE, Tween.EASE_IN)
+#		$Tween.start()
 	

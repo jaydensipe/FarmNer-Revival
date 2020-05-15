@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FarmNer/Sounds/Ambiance/mainMenuAmbiance.wav" type="AudioStream" id=1]
+
+[node name="MainMenuAmbiance" type="Node2D"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -12.0
+autoplay = true

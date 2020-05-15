@@ -1,0 +1,240 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://FarmNer/Assets/Textures/farmnerBackgroundArt.png" type="Texture" id=1]
+[ext_resource path="res://FarmNer/Assets/Textures/farmnerText.png" type="Texture" id=2]
+[ext_resource path="res://FarmNer/Assets/Textures/playButton.png" type="Texture" id=3]
+[ext_resource path="res://FarmNer/Assets/Textures/exitButton.png" type="Texture" id=4]
+[ext_resource path="res://FarmNer/Assets/MainMenu/MainMenu.gd" type="Script" id=5]
+[ext_resource path="res://FarmNer/Assets/Textures/exitButtonHover.png" type="Texture" id=6]
+[ext_resource path="res://FarmNer/Assets/Textures/playButtonHover.png" type="Texture" id=7]
+[ext_resource path="res://FarmNer/Assets/Textures/exitButtonPressed.png" type="Texture" id=8]
+[ext_resource path="res://FarmNer/Assets/Textures/playButtonPressed.png" type="Texture" id=9]
+[ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=10]
+[ext_resource path="res://FarmNer/Sounds/Ambiance/MainMenuAmbiance.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FarmNer/Sounds/FlashLight/FlashLightSoundScene.tscn" type="PackedScene" id=12]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+void vertex()
+{
+	VERTEX.x += cos(TIME + VERTEX.x) * 5.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 2.5;
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+
+void vertex()
+{
+	VERTEX.x += cos(TIME + VERTEX.x) * 5.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 2.5;
+}"
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+void vertex()
+{
+	VERTEX.x += cos(TIME + VERTEX.x) * 5.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 2.5;
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+shader = SubResource( 5 )
+
+[sub_resource type="Shader" id=7]
+code = "shader_type canvas_item;
+
+void vertex()
+{
+	VERTEX.x += cos(TIME + VERTEX.x) * 7.0;
+	VERTEX.y += sin(TIME + VERTEX.y) * 2.5;
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = SubResource( 7 )
+
+[sub_resource type="Animation" id=9]
+resource_name = "FadeIn"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "FadeOut"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("ColorRect:color:r")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("ColorRect:color:g")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("ColorRect:color:b")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("ColorRect:color:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="MainMenuAmbiance" parent="." instance=ExtResource( 11 )]
+position = Vector2( 184, 120 )
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 243, 181.046 )
+scale = Vector2( 1.21533, 1.21533 )
+texture = ExtResource( 10 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2( 184, 120 )
+color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+material = SubResource( 2 )
+position = Vector2( -72, -40 )
+scale = Vector2( 1.08148, 1.08148 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="Play" type="TextureButton" parent="."]
+material = SubResource( 4 )
+margin_left = 712.0
+margin_top = 576.0
+margin_right = 1200.0
+margin_bottom = 752.0
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 9 )
+texture_hover = ExtResource( 7 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="."]
+material = SubResource( 6 )
+margin_left = 712.0
+margin_top = 800.0
+margin_right = 1192.0
+margin_bottom = 976.0
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 8 )
+texture_hover = ExtResource( 6 )
+expand = true
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Farmner" type="TextureRect" parent="."]
+material = SubResource( 8 )
+margin_left = 184.0
+margin_top = 120.0
+margin_right = 1735.0
+margin_bottom = 422.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="BlackFade" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="BlackFade"]
+margin_left = -24.0
+margin_top = -24.0
+margin_right = 1942.0
+margin_bottom = 1152.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlackFade"]
+playback_speed = 0.25
+anims/FadeIn = SubResource( 9 )
+anims/FadeOut = SubResource( 10 )
+
+[node name="Timer" type="Timer" parent="BlackFade"]
+wait_time = 4.0
+one_shot = true
+
+[node name="FlashLightSound" parent="." instance=ExtResource( 12 )]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]
+[connection signal="timeout" from="BlackFade/Timer" to="." method="_on_Timer_timeout"]
