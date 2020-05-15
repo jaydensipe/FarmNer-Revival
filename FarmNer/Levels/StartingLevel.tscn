@@ -307,6 +307,8 @@ position = Vector2( 896, 360 )
 
 [node name="Zone1" type="Area2D" parent="BlackFadeZones"]
 position = Vector2( 982.475, 459.843 )
+collision_layer = 131072
+collision_mask = 131072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone1"]
 position = Vector2( 57.525, 4.15701 )
@@ -316,6 +318,8 @@ shape = SubResource( 4 )
 [node name="Zone2" type="Area2D" parent="BlackFadeZones"]
 position = Vector2( 352, 552 )
 scale = Vector2( 1.17262, 1.16204 )
+collision_layer = 131072
+collision_mask = 131072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone2"]
 position = Vector2( 0.513489, 0.774597 )

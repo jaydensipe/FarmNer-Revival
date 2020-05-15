@@ -71,6 +71,7 @@ Use={
 
 [layer_names]
 
+2d_physics/layer_18="MapChange"
 2d_physics/layer_19="Torch"
 2d_physics/layer_20="ChestOpening"
 
