@@ -58,7 +58,7 @@ func direction2str(direction):
 # Camera and speed tween for attack move
 func attack():
 	if (Input.is_action_pressed("Attack")):
-		$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*0.3
+		$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*0.5
 		$Tween.remove_all()
 		$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, Vector2(0.12, 0.12), 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 		speed = 25

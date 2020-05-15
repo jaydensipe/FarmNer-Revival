@@ -22,6 +22,10 @@ boot_splash/image="res://FarmNer/Assets/Textures/splashart.png"
 boot_splash/use_filter=false
 config/icon="res://icon.png"
 
+[autoload]
+
+GLOBAL="*res://FarmNer/GameManager/GlobalScript/global.gd"
+
 [display]
 
 window/size/width=1920
