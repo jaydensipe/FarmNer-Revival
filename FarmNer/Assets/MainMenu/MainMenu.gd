@@ -33,3 +33,4 @@ func _on_Play_pressed():
 func _on_Timer_timeout():
 	queue_free()
 	get_tree().change_scene("res://FarmNer/GameManager/Game.tscn")
+	

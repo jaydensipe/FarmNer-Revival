@@ -28,3 +28,5 @@ shadow_filter = 1
 
 [node name="FlashLightSound" parent="." instance=ExtResource( 2 )]
 scale = Vector2( 12.3624, 26.7624 )
+
+[node name="Tween" type="Tween" parent="."]

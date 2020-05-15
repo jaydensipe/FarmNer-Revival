@@ -1,17 +1,22 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://FarmNer/Assets/Chest/chest.png" type="Texture" id=1]
 [ext_resource path="res://FarmNer/Assets/Shaders/OutlineShader.shader" type="Shader" id=2]
 [ext_resource path="res://FarmNer/Assets/Chest/Chest.gd" type="Script" id=3]
+[ext_resource path="res://FarmNer/Assets/Fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://FarmNer/Assets/Chest/ChestOpenSound.tscn" type="PackedScene" id=5]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 4 )
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="RectangleShape2D" id=2]
+
+[sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 2 )
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/turnOn = 0.0
 
-[sub_resource type="GDScript" id=3]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Sprite
 
 
@@ -25,27 +30,44 @@ func _on_Area2D_mouse_exited():
 	pass # Replace with function body.
 "
 
-[sub_resource type="RectangleShape2D" id=4]
-
 [sub_resource type="RectangleShape2D" id=5]
+
+[sub_resource type="RectangleShape2D" id=6]
 
 [node name="Chest" type="Node2D"]
 scale = Vector2( 0.667101, 0.667101 )
 z_index = 2
 script = ExtResource( 3 )
 
+[node name="ChestOpenSound" parent="." instance=ExtResource( 5 )]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+visible = false
+margin_left = -19.2341
+margin_top = -18.0284
+margin_right = 79.7659
+margin_bottom = -2.02842
+rect_scale = Vector2( 0.397735, 0.397735 )
+mouse_filter = 2
+custom_fonts/normal_font = SubResource( 1 )
+text = "Left click!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -0.00703049, 1.47408 )
 scale = Vector2( 0.557719, 0.273114 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-material = SubResource( 2 )
+material = SubResource( 3 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 11, 9 )
-script = SubResource( 3 )
+script = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( -0.283318, -1.3036 )
@@ -56,7 +78,7 @@ collision_mask = 524288
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 0.264446, 0.250237 )
 scale = Vector2( 0.609013, 0.609013 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="PlayerDetection" type="Area2D" parent="."]
 collision_layer = 524288
@@ -64,7 +86,7 @@ collision_mask = 524288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
 scale = Vector2( 3.8921, 3.8921 )
-shape = SubResource( 5 )
+shape = SubResource( 6 )
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]

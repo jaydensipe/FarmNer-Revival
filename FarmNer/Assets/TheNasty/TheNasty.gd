@@ -6,8 +6,11 @@ var colorRand2
 var colorRand3
 
 func _ready():
+	randomizeColor()
 	
-	# Sets lights and particles to random colors
+
+# Sets lights and particles to random colors
+func randomizeColor():
 	rng.randomize()
 	colorRand1 = rng.randf_range(0, 1.0)
 	colorRand2 = rng.randf_range(0, 1.0)
