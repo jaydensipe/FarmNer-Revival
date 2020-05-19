@@ -201,7 +201,7 @@ color = Color( 0.0117647, 0, 0.027451, 1 )
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource( 1 )
 
-[node name="Tiles" type="Node2D" parent="."]
+[node name="Tiles" type="Navigation2D" parent="."]
 
 [node name="Rocks" type="TileMap" parent="Tiles"]
 tile_set = ExtResource( 5 )

@@ -28,7 +28,7 @@ func _on_Area2D_mouse_exited():
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (playerEntered == true && chestOpen == false):
 		if event is InputEventMouseButton:
-			if event.is_pressed():
+			if event.button_index == BUTTON_LEFT and event.pressed:
 				chestOpen = true
 				$Sprite.texture = load("res://FarmNer/Assets/Chest/chestOpen.png")
 				$ChestOpenSound/AudioStreamPlayer2D.play()
