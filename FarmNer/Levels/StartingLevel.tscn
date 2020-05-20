@@ -183,25 +183,26 @@ script = ExtResource( 1 )
 [node name="Level" type="Node2D" parent="."]
 scale = Vector2( 1, 0.995415 )
 
-[node name="Background" type="ColorRect" parent="Level"]
-margin_left = -193.0
-margin_top = -136.0
-margin_right = 1272.0
-margin_bottom = 758.0
-rect_scale = Vector2( 1, 0.996784 )
-mouse_filter = 2
-color = Color( 0.392157, 0.513726, 0.360784, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
+visible = false
 color = Color( 0.0117647, 0, 0.027451, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
 environment = SubResource( 1 )
 
-[node name="Tiles" type="Navigation2D" parent="."]
+[node name="Background" type="ColorRect" parent="Level"]
+margin_left = -192.0
+margin_top = -137.0
+margin_right = 1272.0
+margin_bottom = 755.0
+mouse_filter = 2
+color = Color( 0.392157, 0.513726, 0.360784, 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Tiles" type="Node2D" parent="."]
 
 [node name="Rocks" type="TileMap" parent="Tiles"]
 tile_set = ExtResource( 5 )

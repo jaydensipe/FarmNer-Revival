@@ -2,6 +2,8 @@
 
 [ext_resource path="res://FarmNer/Sounds/Ambiance/mainMenuAmbiance.wav" type="AudioStream" id=1]
 
+
+
 [node name="MainMenuAmbiance" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -7,6 +7,9 @@ var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "U
 var velocity = Vector2()
 var facing = Vector2()
 
+func _ready():
+	get_tree().call_group("Enemy", "setPlayer", self)
+
 func _physics_process(delta):
 	get_input()
 	torchDetection()

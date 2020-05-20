@@ -2,6 +2,8 @@
 
 [ext_resource path="res://FarmNer/Sounds/FlashLight/flashlightBeam.wav" type="AudioStream" id=1]
 
+
+
 [node name="FlashLightBeamSound" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="."]

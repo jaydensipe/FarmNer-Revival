@@ -3,6 +3,8 @@
 [ext_resource path="res://FarmNer/Sounds/FlashLight/flashlightOn.wav" type="AudioStream" id=1]
 [ext_resource path="res://FarmNer/Sounds/FlashLight/flashLightOff.wav" type="AudioStream" id=2]
 
+
+
 [node name="FlashLightSound" type="Node2D"]
 
 [node name="On" type="AudioStreamPlayer" parent="."]

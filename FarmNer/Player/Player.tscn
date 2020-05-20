@@ -6,6 +6,8 @@
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=4]
 [ext_resource path="res://FarmNer/Assets/CameraShake/CameraShake.tscn" type="PackedScene" id=5]
 
+
+
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 16, 16 )

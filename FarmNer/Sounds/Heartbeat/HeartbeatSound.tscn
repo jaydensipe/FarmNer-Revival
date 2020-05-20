@@ -2,6 +2,8 @@
 
 [ext_resource path="res://FarmNer/Sounds/Heartbeat/heartbeatSound.wav" type="AudioStream" id=1]
 
+
+
 [node name="HeartbeatSound" type="Node2D"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
