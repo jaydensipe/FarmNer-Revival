@@ -2,7 +2,6 @@ extends Node2D
 
 var mousePos
 var flashlightOn = true
-var flashlightSound = 5
 
 func _process(delta):
 	mousePos = get_local_mouse_position()
