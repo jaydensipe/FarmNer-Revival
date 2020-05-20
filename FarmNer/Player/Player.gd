@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+
+# Movement speeds and directions
 export (int) var speed = 75
 var sprintSpeed = 1
 
@@ -7,7 +9,10 @@ var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "U
 var velocity = Vector2()
 var facing = Vector2()
 
+
+# Makes enemies target player
 func _ready():
+	yield(get_tree(), "idle_frame")
 	get_tree().call_group("Enemy", "setPlayer", self)
 
 func _physics_process(delta):
