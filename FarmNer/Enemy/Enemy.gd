@@ -28,33 +28,43 @@ func _physics_process(delta):
 	
 	var animation = direction2str(facing)
 	$Sprite.play(animation)
-
+	
+	# Plays footsteps
 	if not $FootstepSound/AudioStreamPlayer2D.playing:
 		$FootstepSound/AudioStreamPlayer2D.play()
-
+		
+#	if $CollisionDetection.is_colliding():
+#
 # Converts direction to string and controls raycast direction
 func direction2str(direction):
 	var angle = direction.angle()
 	if angle < 0:
 		angle += 2 * PI
 	var index = round(angle / PI * 4)
-	print(index)
 	if (index == 0):
 		$RayCast2D.rotation_degrees = -90
+		$CollisionDetection.rotation_degrees = -90
 	elif (index == 1):
-		$RayCast2D.rotation_degrees = - 45
+		$RayCast2D.rotation_degrees = -45
+		$CollisionDetection.rotation_degrees = -45
 	elif (index == 2):
 		$RayCast2D.rotation_degrees = 0
+		$CollisionDetection.rotation_degrees = 0
 	elif (index == 3):
 		$RayCast2D.rotation_degrees = 45
+		$CollisionDetection.rotation_degrees = 45
 	elif (index == 4):
 		$RayCast2D.rotation_degrees = 90
+		$CollisionDetection.rotation_degrees = 90
 	elif (index == 5):
 		$RayCast2D.rotation_degrees = 135
+		$CollisionDetection.rotation_degrees = 135
 	elif (index == 6):
 		$RayCast2D.rotation_degrees = 180
+		$CollisionDetection.rotation_degrees = 180
 	elif (index == 7):
 		$RayCast2D.rotation_degrees = -135
+		$CollisionDetection.rotation_degrees = -135
 		
 		
 	if index == 8: 
