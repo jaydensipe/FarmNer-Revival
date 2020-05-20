@@ -5,7 +5,7 @@
 [ext_resource path="res://FarmNer/Assets/Flashlight/Flashlight.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FarmNer/Assets/BlackFade/BlackFade.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FarmNer/Sounds/Ambiance/AmbianceScene.tscn" type="PackedScene" id=5]
-[ext_resource path="res://FarmNer/GameManager/GlobalScript/global.gd" type="Script" id=6]
+[ext_resource path="res://FarmNer/GameManager/Game.gd" type="Script" id=6]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 6 )
@@ -28,4 +28,3 @@ scale = Vector2( 0.047, 0.047 )
 [node name="AmbianceAudio" parent="." instance=ExtResource( 5 )]
 
 [node name="Tween" type="Tween" parent="AmbianceAudio"]
-[connection signal="Lvl1to2" from="Player/BlackFade" to="." method="_on_BlackFade_Lvl1to2"]

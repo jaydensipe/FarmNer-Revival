@@ -4,8 +4,6 @@ extends Node
 
 # Level Changing Signals
 
-signal onPlayerEnterLvl1from2
-signal onPlayerEnterLvl2
-
-
-# Level Changing
+signal onPlayerEnterLVL1TO2
+signal onPlayerEnterLVL2TO1
+signal onPlayerEnterLVL1TO3

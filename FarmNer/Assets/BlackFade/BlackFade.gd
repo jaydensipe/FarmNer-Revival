@@ -1,11 +1,7 @@
 extends Node2D
 
-signal Lvl1to2
-
 var lvl = 0
 
-func _ready():
-	$AnimationPlayer.play("FadeIn")
 	
 # Player enters from 1 -> 2
 func _on_StartingLevel_onPlayerEnterLvl2():

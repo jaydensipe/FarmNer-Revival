@@ -1,5 +1,6 @@
 extends Node2D
 
+# Camera shake script
 var cameraMove = Vector2()
 var shake = 0
 var shake_magnitude = 1
