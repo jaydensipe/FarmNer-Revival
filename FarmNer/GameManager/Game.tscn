@@ -13,6 +13,15 @@ script = ExtResource( 6 )
 
 [node name="StartingLevel" parent="." instance=ExtResource( 1 )]
 
+[node name="Enemy" parent="StartingLevel" instance=ExtResource( 7 )]
+position = Vector2( 176, 446.001 )
+
+[node name="Enemy2" parent="StartingLevel" instance=ExtResource( 7 )]
+position = Vector2( -14.0001, 489.001 )
+
+[node name="Enemy3" parent="StartingLevel" instance=ExtResource( 7 )]
+position = Vector2( 314.001, 351.001 )
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 141.658, 64.1052 )
 z_index = 1
@@ -29,12 +38,3 @@ scale = Vector2( 0.047, 0.047 )
 [node name="AmbianceAudio" parent="." instance=ExtResource( 5 )]
 
 [node name="Tween" type="Tween" parent="AmbianceAudio"]
-
-[node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 176, 446.001 )
-
-[node name="Enemy2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -14.0001, 489.001 )
-
-[node name="Enemy3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 314.001, 351.001 )

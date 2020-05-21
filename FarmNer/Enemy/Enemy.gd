@@ -45,7 +45,6 @@ func checkToTakeDamage():
 		$Sprite.speed_scale = 2
 		speed = 50
 	elif ($LightAttackDetection.get_overlapping_areas().empty() == false):
-		print(health)
 		health -= 3
 		if (health < 0):
 			queue_free()

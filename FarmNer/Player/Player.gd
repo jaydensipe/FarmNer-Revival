@@ -65,20 +65,21 @@ func direction2str(direction):
 	
 # Camera and speed tween for attack move
 func attack():
-	if (Input.is_action_pressed("Attack")):
-		$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*0.5
-		$Tween.remove_all()
-		$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, Vector2(0.12, 0.12), 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
-		speed = 25
-		$Sprite.speed_scale = 0.8
-		$Tween.start()
-		$FootstepSound/AudioStreamPlayer2D.pitch_scale = 0.6
-	else:
-		$Tween.stop($Camera2D)
-		$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, Vector2(0.14, 0.14), 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
-		speed = 75
-		$FootstepSound/AudioStreamPlayer2D.pitch_scale = 0.85
-		$Sprite.speed_scale = 2
+	if ($Flashlight.flashlightOn == false):
+		if (Input.is_action_pressed("Attack")):
+			$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*0.5
+			$Tween.remove_all()
+			$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, Vector2(0.12, 0.12), 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+			speed = 25
+			$Sprite.speed_scale = 0.8
+			$Tween.start()
+			$FootstepSound/AudioStreamPlayer2D.pitch_scale = 0.6
+		else:
+			$Tween.stop($Camera2D)
+			$Tween.interpolate_property($Camera2D, "zoom", $Camera2D.zoom, Vector2(0.14, 0.14), 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+			speed = 75
+			$FootstepSound/AudioStreamPlayer2D.pitch_scale = 0.85
+			$Sprite.speed_scale = 2
 		
 # Detects if player is standing in torch light range
 func torchDetection():
