@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/enemyScream.wav-d6e29547caa1a2b9bbd269d4f4060039.sample"
+
+[deps]
+
+source_file="res://FarmNer/Sounds/EnemyScream/enemyScream.wav"
+dest_files=[ "res://.import/enemyScream.wav-d6e29547caa1a2b9bbd269d4f4060039.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

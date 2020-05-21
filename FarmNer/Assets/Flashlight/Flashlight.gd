@@ -28,7 +28,7 @@ func attackBeam():
 		
 		if (Input.is_action_pressed("Attack")):
 			if not $FlashLightBeamSound/AudioStreamPlayer2D.playing:
-				$FlashLightBeamSound/AudioStreamPlayer2D.volume_db = -15.0
+				$FlashLightBeamSound/AudioStreamPlayer2D.volume_db = -20.0
 				$FlashLightBeamSound/AudioStreamPlayer2D.play()
 			
 			$Attack.monitorable = true

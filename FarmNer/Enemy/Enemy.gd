@@ -49,10 +49,15 @@ func _physics_process(delta):
 # Checks to see if enemy should take damage and also slows, and kills them if their health goes below 0 
 func checkToTakeDamage():
 	if ($LightAttackDetection.get_overlapping_areas().empty() == true):
+		$EnemyScream/AudioStreamPlayer2D.stop()
 		$Sprite.speed_scale = 2
 		speed = cSPEED
 	elif ($LightAttackDetection.get_overlapping_areas().empty() == false):
 		health -= 3
+		
+		if not $EnemyScream/AudioStreamPlayer2D.playing:
+			$EnemyScream/AudioStreamPlayer2D.play()
+		
 		if (health < 0):
 			queue_free()
 

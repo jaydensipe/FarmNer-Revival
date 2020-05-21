@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://FarmNer/Sounds/BandageSound/bandageSound.wav" type="AudioStream" id=1]
+[ext_resource path="res://FarmNer/Assets/BandageSound/BandageSoundScene.gd" type="Script" id=2]
+
+[node name="BandageSound" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]

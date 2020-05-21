@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://FarmNer/Sounds/Hitsounds/hitsound3.wav" type="AudioStream" id=1]
+[ext_resource path="res://FarmNer/Sounds/Hitsounds/hitsound2.wav" type="AudioStream" id=2]
+[ext_resource path="res://FarmNer/Sounds/Hitsounds/hitsound1.wav" type="AudioStream" id=3]
+
+[node name="HitSoundEffects" type="Node2D"]
+
+[node name="hitsound1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
+
+[node name="hitsound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -10.0
+
+[node name="hitsound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -10.0

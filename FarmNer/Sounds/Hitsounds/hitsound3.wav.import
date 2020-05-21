@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hitsound3.wav-2ed732b4b70090050feb4fe2c1c694b3.sample"
+
+[deps]
+
+source_file="res://FarmNer/Sounds/Hitsounds/hitsound3.wav"
+dest_files=[ "res://.import/hitsound3.wav-2ed732b4b70090050feb4fe2c1c694b3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
