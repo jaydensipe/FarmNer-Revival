@@ -33,7 +33,6 @@ texture = ExtResource( 4 )
 offset = Vector2( 315.589, -0.0212121 )
 color = Color( 0.780392, 0.466667, 0.392157, 1 )
 energy = 1.5
-shadow_enabled = true
 shadow_gradient_length = 10.0
 shadow_filter = 1
 

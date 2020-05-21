@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Blood" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+emission_shape = 1
+emission_sphere_radius = 7.88

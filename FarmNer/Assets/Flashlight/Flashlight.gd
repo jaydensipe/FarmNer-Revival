@@ -11,7 +11,7 @@ func _process(delta):
 # Turns flashlight on & off
 func turnOnOffFlashlight():
 	
-	if Input.is_action_just_pressed("RightClick") && !flashlightOn:
+	if Input.is_action_just_pressed("RightClick") && !flashlightOn && !Input.is_action_pressed("Attack"):
 		flashlightOn = true
 		$FlashLightSound/Off.play()
 		$Sprite/Beam.enabled = 0

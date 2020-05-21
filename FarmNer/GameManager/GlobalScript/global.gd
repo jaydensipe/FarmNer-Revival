@@ -7,3 +7,8 @@ extends Node
 signal onPlayerEnterLVL1TO2
 signal onPlayerEnterLVL2TO1
 signal onPlayerEnterLVL1TO3
+
+
+# Hurt Player
+
+signal hurtPlayer
