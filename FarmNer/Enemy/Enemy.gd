@@ -1,14 +1,15 @@
 extends KinematicBody2D
  
-# Movement speeds and directions
-export (int) var speed = 65
+# Movement speeds, directions, and health
+var speed = 50
+var health = 500
+
 var directions = ["Right", "RightDown", "Down", "LeftDown", "Left", "LeftUp", "Up", "RightUp"]
 var vec_to_player = Vector2()
 var facing = Vector2()
 
 # Sets player
 var player = null
-
 func setPlayer(play):
 	player = play
  
@@ -17,6 +18,9 @@ func _ready():
  
 func _physics_process(delta):
 	
+	# Checks if the enemy should be taking damage
+	checkToTakeDamage()
+
 	# Controls animations
 	vec_to_player = Vector2(0, 0)
 	if player == null:
@@ -34,6 +38,20 @@ func _physics_process(delta):
 		$FootstepSound/AudioStreamPlayer2D.play()
 		
 #	if $CollisionDetection.is_colliding():
+
+# Checks to see if enemy should take damage and also slows, and kills them if their health goes below 0 
+func checkToTakeDamage():
+	if ($LightAttackDetection.get_overlapping_areas().empty() == true):
+		$Sprite.speed_scale = 2
+		speed = 50
+	elif ($LightAttackDetection.get_overlapping_areas().empty() == false):
+		print(health)
+		health -= 3
+		if (health < 0):
+			queue_free()
+
+		$Sprite.speed_scale = 0.5
+		speed = 15
 #
 # Converts direction to string and controls raycast direction
 func direction2str(direction):
@@ -71,9 +89,7 @@ func direction2str(direction):
 		return directions[0]
 	else:
 		return directions[index]
-
-
-
+		
 ## Hurts player
 #	if raycast.is_colliding():
 #		var coll = raycast.get_collider()
@@ -82,3 +98,9 @@ func direction2str(direction):
 #
 #func kill():
 #	queue_free()
+
+
+
+
+
+

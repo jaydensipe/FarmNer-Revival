@@ -6,10 +6,19 @@
 [ext_resource path="res://FarmNer/Assets/Textures/flashlightBeam.png" type="Texture" id=4]
 [ext_resource path="res://FarmNer/Sounds/FlashLight/FlashLightBeamSound.tscn" type="PackedScene" id=5]
 
-
-
 [node name="Flashlight" type="Node2D"]
 script = ExtResource( 3 )
+
+[node name="Attack" type="Area2D" parent="."]
+position = Vector2( 96, 5.34058e-05 )
+scale = Vector2( 4.94075, 2.6024 )
+monitoring = false
+monitorable = false
+collision_layer = 65536
+collision_mask = 65536
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Attack"]
+polygon = PoolVector2Array( 9.71512, -6.9517e-06, 613.672, -182.235, 610.434, 174.945 )
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 0.785398
@@ -19,8 +28,7 @@ offset = Vector2( 16.9845, -16.9956 )
 [node name="Beam" type="Light2D" parent="Sprite"]
 position = Vector2( 67.8823, -67.8822 )
 rotation = -0.785398
-scale = Vector2( 4.94075, 7.6824 )
-enabled = false
+scale = Vector2( 4.941, 7.682 )
 texture = ExtResource( 4 )
 offset = Vector2( 315.589, -0.0212121 )
 color = Color( 0.780392, 0.466667, 0.392157, 1 )

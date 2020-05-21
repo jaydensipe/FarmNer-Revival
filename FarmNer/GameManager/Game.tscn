@@ -31,4 +31,10 @@ scale = Vector2( 0.047, 0.047 )
 [node name="Tween" type="Tween" parent="AmbianceAudio"]
 
 [node name="Enemy" parent="." instance=ExtResource( 7 )]
-position = Vector2( 79.4459, 423.542 )
+position = Vector2( 176, 446.001 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 7 )]
+position = Vector2( -14.0001, 489.001 )
+
+[node name="Enemy3" parent="." instance=ExtResource( 7 )]
+position = Vector2( 314.001, 351.001 )

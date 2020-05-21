@@ -27,6 +27,8 @@ func attackBeam():
 		if not $FlashLightBeamSound/AudioStreamPlayer2D.playing:
 			$FlashLightBeamSound/AudioStreamPlayer2D.volume_db = -15.0
 			$FlashLightBeamSound/AudioStreamPlayer2D.play()
+			
+		$Attack.monitorable = true
 		
 		$Tween.remove_all()
 		$Tween.interpolate_property($Sprite/Beam, "scale", $Sprite/Beam.scale, Vector2(4.941, 3.0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
@@ -37,6 +39,9 @@ func attackBeam():
 		if $FlashLightBeamSound/AudioStreamPlayer2D.playing == true:
 			$Tween.interpolate_property($FlashLightBeamSound/AudioStreamPlayer2D, "volume_db", $FlashLightBeamSound/AudioStreamPlayer2D.volume_db, -80.0, 0.2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 			$Tween.start()
+	
+		$Attack.monitorable = false
+		
 		$Tween.stop($Sprite/Beam)
 		$Tween.interpolate_property($Sprite/Beam, "scale", $Sprite/Beam.scale, Vector2(4.941, 7.682), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 		$Tween.interpolate_property($Sprite/Beam, "energy", $Sprite/Beam.energy, 1.5, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
