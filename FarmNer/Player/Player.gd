@@ -80,17 +80,17 @@ func direction2str(direction):
 	elif (index == 1):
 		$Flashlight.position = Vector2(-3.05, 1.642)
 	elif (index == 2):
-		$Flashlight.position = Vector2(3.454, 1.24)
+		$Flashlight.position = Vector2(-3.454, 1.24)
 	elif (index == 3):
 		$Flashlight.position = Vector2(-3.735, 1.098)
 	elif (index == 4):
 		$Flashlight.position = Vector2(1.042, 1.263)
 	elif (index == 5):
-		$Flashlight.position = Vector2(-4.303, 1.311)
-	elif (index == 6):
-		$Flashlight.position = Vector2(4.258, 0.979)
-	elif (index == 7):
 		$Flashlight.position = Vector2(3.454, 1.24)
+	elif (index == 6):
+		$Flashlight.position = Vector2(3.454, 1.24)
+	elif (index == 7):
+		$Flashlight.position = Vector2(3.67, 1.24)
 	return directions[index]
 	
 # Camera and speed tween for attack move
