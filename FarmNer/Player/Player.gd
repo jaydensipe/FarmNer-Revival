@@ -56,6 +56,7 @@ func get_input():
 		
 	elif !left || !right || !up || !down:
 		$Sprite.play("IdleUp")
+		$Flashlight.position = Vector2(3.454, 1.24)
 		$FootstepSound/AudioStreamPlayer2D.stop()
 	
 	# Sprinting
@@ -74,6 +75,22 @@ func direction2str(direction):
 	if angle < 0:
 		angle += 2 * PI
 	var index = round(angle / PI * 4)
+	if (index == 0):
+		$Flashlight.position = Vector2(-0.401, 1.24)
+	elif (index == 1):
+		$Flashlight.position = Vector2(-3.05, 1.642)
+	elif (index == 2):
+		$Flashlight.position = Vector2(3.454, 1.24)
+	elif (index == 3):
+		$Flashlight.position = Vector2(-3.735, 1.098)
+	elif (index == 4):
+		$Flashlight.position = Vector2(1.042, 1.263)
+	elif (index == 5):
+		$Flashlight.position = Vector2(-4.303, 1.311)
+	elif (index == 6):
+		$Flashlight.position = Vector2(4.258, 0.979)
+	elif (index == 7):
+		$Flashlight.position = Vector2(3.454, 1.24)
 	return directions[index]
 	
 # Camera and speed tween for attack move
@@ -142,6 +159,7 @@ func _on_AttackDelayTimer_timeout():
 func healthBar():
 	match playerHealth:
 		30:
+			
 			$HealthBar/heart1.visible = true
 			$HealthBar/heart2.visible = false
 			$HealthBar/heart3.visible = false
