@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/flashlight.png-3dbd382fa08072fa75d95f369eb111b6.stex"
+path="res://.import/chest.png-0dfc4323c170706df3997e2f06faba5f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FarmNer/Assets/Flashlight/flashlight.png"
-dest_files=[ "res://.import/flashlight.png-3dbd382fa08072fa75d95f369eb111b6.stex" ]
+source_file="res://FarmNer/Assets/Textures/chest.png"
+dest_files=[ "res://.import/chest.png-0dfc4323c170706df3997e2f06faba5f.stex" ]
 
 [params]
 

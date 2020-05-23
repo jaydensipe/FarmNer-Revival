@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://FarmNer/Assets/Chest/chestOpenSound.wav" type="AudioStream" id=1]
+[ext_resource path="res://FarmNer/Sounds/Chest/chestOpenSound.wav" type="AudioStream" id=1]
+
 
 [node name="ChestOpenSound" type="Node2D"]
 

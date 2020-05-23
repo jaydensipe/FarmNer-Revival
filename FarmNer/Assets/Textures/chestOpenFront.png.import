@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/chest.png-993bff05c6ec088dd84e09600856177c.stex"
+path="res://.import/chestOpenFront.png-1543d3bfecd98778972d25f786432447.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://FarmNer/Assets/Chest/chest.png"
-dest_files=[ "res://.import/chest.png-993bff05c6ec088dd84e09600856177c.stex" ]
+source_file="res://FarmNer/Assets/Textures/chestOpenFront.png"
+dest_files=[ "res://.import/chestOpenFront.png-1543d3bfecd98778972d25f786432447.stex" ]
 
 [params]
 

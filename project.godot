@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="FarmNer Revival"
+config/name="FarmNer"
 config/description="Find out the truth about the FarmNer! ;)."
 run/main_scene="res://FarmNer/Assets/MainMenu/MainMenu.tscn"
 boot_splash/image="res://FarmNer/Assets/Textures/splashart.png"
@@ -85,6 +85,7 @@ Heal={
 [layer_names]
 
 2d_physics/layer_2="Player"
+2d_physics/layer_14="TheNastyCollision"
 2d_physics/layer_15="BandageGrab"
 2d_physics/layer_16="Enemies"
 2d_physics/layer_17="LightAttack"

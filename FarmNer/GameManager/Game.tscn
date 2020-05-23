@@ -22,5 +22,3 @@ z_index = 100
 scale = Vector2( 0.421572, 0.421572 )
 
 [node name="AmbianceAudio" parent="." instance=ExtResource( 5 )]
-
-[node name="Tween" type="Tween" parent="AmbianceAudio"]

@@ -92,15 +92,6 @@ func direction2str(direction):
 		return directions[0]
 	else:
 		return directions[index]
-		
-## Hurts player
-#	if raycast.is_colliding():
-#		var coll = raycast.get_collider()
-#		if coll.name == "Player":
-#			coll.kill()
-#
-#func kill():
-#	queue_free()
 
 
 
