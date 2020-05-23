@@ -4,12 +4,14 @@ extends Node2D
 # Preloading levels
 var startingLevel = preload("res://FarmNer/Levels/StartingLevel.tscn")
 var level2 = preload("res://FarmNer/Levels/Level2.tscn")
-	
+
+# Level Instances
+var level2Instance = level2.instance()
+var startingLevelInstance = startingLevel.instance()
 
 # Changes from Lvl 1 -> 2
 func _on_PlayerEnter_LVL1TO2():
 	call_deferred("remove_child", $StartingLevel)
-	var level2Instance = level2.instance()
 	call_deferred("add_child", level2Instance)
 	$Player.set_deferred("position", Vector2(47, 454))
 	call_deferred("levelChangeBlackFade")
@@ -18,12 +20,15 @@ func _on_PlayerEnter_LVL1TO2():
 # Changes from Lvl 2 -> 1
 func _on_PlayerEnter_LVL2TO1():
 	call_deferred("remove_child", $Level2)
-	var startingLevelInstance = startingLevel.instance()
 	call_deferred("add_child", startingLevelInstance)
 	$Player.set_deferred("position", Vector2(986, 448))
 	call_deferred("levelChangeBlackFade")
 
 func _ready():
+	
+	# Loads starting level
+	
+	call_deferred("add_child", startingLevelInstance)
 	
 	# Global connections for signals
 	GLOBAL.connect("onPlayerEnterLVL1TO2", self, "_on_PlayerEnter_LVL1TO2")

@@ -385,6 +385,9 @@ z_index = 5
 [node name="Chest" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 24, 135.232 )
 
+[node name="Chest2" parent="Chests" instance=ExtResource( 11 )]
+position = Vector2( 500.738, 128 )
+
 [node name="Chest3" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 679.717, 303.232 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]

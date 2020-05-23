@@ -15,6 +15,7 @@ var randomHitsound = RandomNumberGenerator.new()
 
 # Controls if the player can take damage or not 
 var canTakeDamage = true
+var canHeal = true
 
 # Player health
 var playerHealth = 120
@@ -182,14 +183,16 @@ func healthBar():
 
 # Plays the bandage heal sound
 func bandageHeal():
-	if(Input.is_action_just_pressed("Heal")):
+	if(Input.is_action_just_pressed("Heal") && GLOBAL.bandageCount > 0 && playerHealth < 120 && canHeal == true):
 		if not $BandageSound/AudioStreamPlayer.playing:
 			$BandageSound/AudioStreamPlayer.play()
-		$BandageBar.removeBandage()
+		GLOBAL.removeBandage()
+		canHeal = false
 		
 # Heals the player when the bandage sound is finished
 func _bandage_Finished():
 		playerHealth += 60
+		canHeal = true
 		
 		if (playerHealth > 120):
 			playerHealth = 120

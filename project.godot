@@ -85,6 +85,7 @@ Heal={
 [layer_names]
 
 2d_physics/layer_2="Player"
+2d_physics/layer_15="BandageGrab"
 2d_physics/layer_16="Enemies"
 2d_physics/layer_17="LightAttack"
 2d_physics/layer_18="MapChange"
