@@ -3,7 +3,7 @@ extends Node2D
 var mousePos
 var flashlightOn = false
 
-func _process(delta):
+func _physics_process(delta):
 	mousePos = get_local_mouse_position()
 	turnOnOffFlashlight()
 	attackBeam()

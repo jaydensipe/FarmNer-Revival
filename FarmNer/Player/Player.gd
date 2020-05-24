@@ -139,7 +139,7 @@ func _player_Take_Damage():
 		$BloodScreen/Tween.interpolate_property($BloodScreen/Sprite, "modulate", Color(1.0, 1.0, 1.0, 1.0), Color(1.0, 1.0, 1.0, 0.0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$BloodScreen/Tween.start()
 		$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*5
-		playerHealth -= 30
+#		playerHealth -= 30
 		
 		# What happens when player dies
 		if (playerHealth <= 0):

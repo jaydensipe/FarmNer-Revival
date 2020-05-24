@@ -178,20 +178,20 @@ points = PoolVector2Array( 9.92597, 11.9778, 10.0558, 14.1197, 5.96674, 13.9899,
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 1.69661, 2.0805 )
 
-[sub_resource type="CircleShape2D" id=6]
+[sub_resource type="CircleShape2D" id=5]
 
-[sub_resource type="Gradient" id=7]
+[sub_resource type="Gradient" id=6]
 offsets = PoolRealArray( 0.13245, 1 )
 colors = PoolColorArray( 0.123047, 0.123047, 0.123047, 1, 0.742188, 0.742188, 0.742188, 1 )
 
-[sub_resource type="Gradient" id=8]
+[sub_resource type="Gradient" id=7]
 offsets = PoolRealArray( 0, 0.602649, 0.993378 )
 colors = PoolColorArray( 0.968627, 0.803922, 0.0470588, 1, 0.988235, 0.639216, 0.027451, 1, 0.368627, 0.219608, 0.00784314, 1 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=8]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -288,7 +288,7 @@ position = Vector2( -0.975626, 4.91565 )
 scale = Vector2( 0.720002, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lighting/Torch6/StaticBody2D"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="Lighting/Torch6"]
 position = Vector2( 0.178722, -0.0672455 )
@@ -299,7 +299,7 @@ collision_mask = 262144
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Lighting/Torch6/Area2D"]
 position = Vector2( -0.0758514, 1.27417 )
 scale = Vector2( 22.7495, 99.0502 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="Tween" type="Tween" parent="Lighting/Torch6"]
 repeat = true
@@ -337,7 +337,7 @@ emission_shape = 1
 emission_sphere_radius = 2.0
 angular_velocity = 464.52
 linear_accel = 6.45
-color_ramp = SubResource( 7 )
+color_ramp = SubResource( 6 )
 
 [node name="FireParticle" type="CPUParticles2D" parent="Lighting/Torch6"]
 position = Vector2( -1.12303, -3.11386 )
@@ -349,7 +349,7 @@ randomness = 0.14
 emission_shape = 1
 emission_sphere_radius = 1.0
 radial_accel = 15.22
-color_ramp = SubResource( 8 )
+color_ramp = SubResource( 7 )
 
 [node name="BlackFadeZones" type="Node2D" parent="."]
 
@@ -361,7 +361,7 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone1"]
 position = Vector2( 57.525, 4.15701 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 
 [node name="Zone2" type="Area2D" parent="BlackFadeZones"]
 position = Vector2( 176, 128 )
@@ -372,7 +372,7 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone2"]
 position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 
 [node name="Zone3" type="Area2D" parent="BlackFadeZones"]
 position = Vector2( 814.024, 8 )
@@ -383,7 +383,7 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone3"]
 position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 4 )
+shape = SubResource( 8 )
 
 [node name="TheNasties" type="Node2D" parent="."]
 
