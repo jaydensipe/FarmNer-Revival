@@ -10,7 +10,7 @@
 script = ExtResource( 6 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 141.658, 64.1052 )
+position = Vector2( 88, -24 )
 z_index = 1
 
 [node name="BlackFade" parent="Player" instance=ExtResource( 4 )]

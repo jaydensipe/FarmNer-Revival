@@ -7,7 +7,11 @@ extends Node
 signal onPlayerEnterLVL1TO2
 signal onPlayerEnterLVL2TO1
 signal onPlayerEnterLVL1TO3
+signal onPlayerEnterLVL3TO1
 
+# Does the player have the orb killer unlocked
+
+var orbDestroyerUnlocked = false
 
 # Hurt Player
 

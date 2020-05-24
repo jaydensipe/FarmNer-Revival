@@ -33,7 +33,7 @@ shader = SubResource( 2 )
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/turnOn = 0.0
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=4]
 
 [sub_resource type="RectangleShape2D" id=5]
 
@@ -76,8 +76,8 @@ collision_layer = 8192
 collision_mask = 8192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -3.16492, 2.24607 )
-scale = Vector2( 1.34577, 1.34577 )
+position = Vector2( -3.16492, 1.41275 )
+scale = Vector2( 0.922848, 0.922848 )
 shape = SubResource( 4 )
 
 [node name="PlayerCollisionNasty" type="Area2D" parent="."]

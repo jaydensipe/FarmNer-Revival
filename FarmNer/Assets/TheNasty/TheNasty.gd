@@ -22,15 +22,17 @@ func randomizeColor():
 
 # Detects if mouse enters orb range
 func _on_Area2D_mouse_entered():
-	$Sprite.material.set_shader_param("turnOn", 1.0)
+	if (GLOBAL.orbDestroyerUnlocked == true):
+		$Sprite.material.set_shader_param("turnOn", 1.0)
 
 # Detects if mouse leaves orb range
 func _on_Area2D_mouse_exited():
-	$Sprite.material.set_shader_param("turnOn", 0.0)
+	if (GLOBAL.orbDestroyerUnlocked == true):
+		$Sprite.material.set_shader_param("turnOn", 0.0)
 
 # Detects if mouse is clicked
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	if (playerEntered == true):
+	if (playerEntered == true && GLOBAL.orbDestroyerUnlocked == true):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
 				print("orb clicked")
