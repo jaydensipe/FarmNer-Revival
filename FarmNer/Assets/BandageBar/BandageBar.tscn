@@ -12,6 +12,7 @@ render_mode unshaded;"
 shader = SubResource( 1 )
 
 [sub_resource type="DynamicFont" id=3]
+size = 256
 font_data = ExtResource( 2 )
 
 [sub_resource type="Shader" id=4]
@@ -26,11 +27,11 @@ script = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 material = SubResource( 2 )
-margin_left = -440.0
-margin_top = -104.0
-margin_right = -396.0
-margin_bottom = -69.0
-rect_scale = Vector2( 14.8033, 14.8033 )
+margin_left = -544.0
+margin_top = -152.0
+margin_right = -256.0
+margin_bottom = 363.0
+rect_scale = Vector2( 1.34756, 1.34756 )
 custom_fonts/font = SubResource( 3 )
 text = "0
 "

@@ -140,8 +140,11 @@ func _player_Take_Damage():
 		$BloodScreen/Tween.start()
 		$Camera2D/CameraShake.shake = $Camera2D/CameraShake.shake_magnitude*5
 		playerHealth -= 30
+		
+		# What happens when player dies
 		if (playerHealth <= 0):
 			get_tree().reload_current_scene()
+			GLOBAL.resetAllGlobalValues()
 		$AttackDelayTimer.start()
 		canTakeDamage = false
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=1]
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=2]
 [ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.gd" type="Script" id=3]
 [ext_resource path="res://FarmNer/Assets/Textures/smoke.png" type="Texture" id=4]
+[ext_resource path="res://FarmNer/Assets/TheNasty/TheNastySound.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -40,11 +41,15 @@ shader_param/turnOn = 0.0
 [node name="TheNasty" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="TheNastySound" parent="." instance=ExtResource( 5 )]
+position = Vector2( -3.16492, 1.41275 )
+scale = Vector2( 0.131266, 0.0971233 )
+
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( -3.58982, 2.17278 )
 scale = Vector2( 0.131266, 0.0971233 )
 texture = ExtResource( 2 )
-energy = 0.6
+energy = 0.8
 mode = 1
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -67,7 +72,8 @@ amount = 16
 speed_scale = 0.5
 texture = ExtResource( 4 )
 emission_shape = 1
-emission_sphere_radius = 75.32
+emission_sphere_radius = 78.0
+initial_velocity = 182.8
 angular_velocity = -371.61
 angular_velocity_random = 0.52
 

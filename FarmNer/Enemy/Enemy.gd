@@ -41,8 +41,8 @@ func _physics_process(delta):
 	$Sprite.play(animation)
 	
 	# Plays footsteps
-	if not $FootstepSound/AudioStreamPlayer2D.playing:
-		$FootstepSound/AudioStreamPlayer2D.play()
+	if not $FootstepSound/enemyRun.playing:
+		$FootstepSound/enemyRun.play()
 		
 		
 	# Hurts player if raycast collides

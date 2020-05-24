@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/theNastyExplosion.wav-7930514a1e469dde236280276abe756d.sample"
+
+[deps]
+
+source_file="res://FarmNer/Sounds/TheNasty/theNastyExplosion.wav"
+dest_files=[ "res://.import/theNastyExplosion.wav-7930514a1e469dde236280276abe756d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

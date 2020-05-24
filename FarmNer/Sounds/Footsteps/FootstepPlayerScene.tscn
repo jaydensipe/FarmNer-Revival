@@ -1,10 +1,15 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://FarmNer/Sounds/Footsteps/walksound.wav" type="AudioStream" id=1]
+[ext_resource path="res://FarmNer/Sounds/Footsteps/enemyRun.wav" type="AudioStream" id=2]
 
 [node name="FootstepSound" type="Node2D"]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 1 )
-volume_db = -30.0
+volume_db = -25.0
 pitch_scale = 0.85
+
+[node name="enemyRun" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -20.0

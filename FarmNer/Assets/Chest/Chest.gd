@@ -28,11 +28,13 @@ func _on_Area2D_mouse_entered():
 func _on_Area2D_mouse_exited():
 	$Sprite.material.set_shader_param("turnOn", 0.0)
 
-# Detects if mouse is clicked
+# Detects if mouse is clicked, opens chest, and puts items in chest
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (playerEntered == true && chestOpen == false):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
+				
+				# Opens chest
 				chestOpen = true
 				$Sprite.hide()
 				$ChestOpenFront.show()

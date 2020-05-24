@@ -42,3 +42,6 @@ func _on_Timer_timeout():
 	queue_free()
 	get_tree().change_scene("res://FarmNer/GameManager/Game.tscn")
 	
+# Turns on/off fullscreen
+func _on_Fullscreen_pressed():
+	OS.window_fullscreen = !OS.window_fullscreen

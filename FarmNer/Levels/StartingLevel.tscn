@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://FarmNer/Levels/StartingLevel.gd" type="Script" id=1]
 [ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=2]
@@ -12,7 +12,6 @@
 [ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.tscn" type="PackedScene" id=10]
 [ext_resource path="res://FarmNer/Assets/Chest/Chest.tscn" type="PackedScene" id=11]
 [ext_resource path="res://FarmNer/Assets/Textures/footstepInGrass.png" type="Texture" id=12]
-[ext_resource path="res://FarmNer/Enemy/Enemy.tscn" type="PackedScene" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -187,6 +186,7 @@ script = ExtResource( 1 )
 
 [node name="Level" type="Node2D" parent="."]
 scale = Vector2( 1, 0.995415 )
+z_index = -2
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
 color = Color( 0.0117647, 0, 0.027451, 1 )
@@ -238,7 +238,7 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 32
 format = 1
-tile_data = PoolIntArray( -393192, 22, 3, -393191, 22, 196612, -393190, 22, 131073, -393188, 22, 3, -393187, 22, 4, -393186, 22, 196609, -393185, 22, 196609, -393184, 22, 4, -327657, 22, 131075, -327647, 22, 65538, -327644, 22, 131074, -327643, 22, 131076, -327642, 22, 131076, -327622, 20, 0, -262128, 20, 0, -262122, 22, 262147, -262105, 22, 2, -196553, 22, 65539, -131033, 20, 0, -131019, 22, 196612, -131018, 22, 131074, -131017, 22, 131075, -65534, 22, 196612, -65505, 22, 131074, -65486, 22, 131073, -65485, 22, 131073, -65484, 22, 196610, 2, 22, 131075, 13, 22, 262147, 14, 22, 3, 15, 22, 131073, 16, 22, 131074, 17, 22, 196610, 18, 22, 131076, 19, 22, 196612, 20, 22, 4, 21, 22, 262147, 22, 22, 131075, 24, 22, 196610, 26, 22, 196612, 27, 22, 196611, 28, 22, 262147, 29, 22, 131073, 30, 22, 65537, 43, 22, 65539, 44, 22, 65536, 46, 22, 0, 47, 22, 131075, 48, 22, 131074, 49, 22, 65540, 58, 22, 65540, 59, 22, 65538, 60, 22, 196612, 61, 22, 131074, 65590, 22, 65539, 65591, 22, 2, 65592, 22, 262148, 65593, 22, 3, 131126, 22, 196608, 196612, 5, 0, 262149, 22, 262148, 262191, 11, 0, 262193, 10, 0, 262195, 9, 0, 262197, 7, 0, 262199, 9, 0, 327686, 7, 0, 327745, 22, 2, 393222, 9, 0, 393223, 8, 0, 393265, 5, 0, 393267, 6, 0, 393269, 10, 0, 393271, 12, 0, 393273, 11, 0, 393281, 22, 262147, 458756, 12, 0, 458757, 12, 0, 458799, 8, 0, 458817, 22, 196611, 524341, 11, 0, 524343, 12, 0, 524345, 7, 0, 524347, 11, 0, 524353, 22, 131072, 589889, 22, 196608, 720891, 22, 262147, 720892, 22, 196608, 655415, 9, 0, 655417, 5, 0, 786426, 22, 262147, 786427, 22, 2, 720921, 5, 0, 851961, 22, 65538, 786443, 9, 0, 786444, 12, 0, 786458, 22, 131076, 786459, 9, 0, 786462, 9, 0, 917496, 22, 3, 851976, 9, 0, 851977, 22, 131076, 851978, 22, 262148, 851998, 9, 0, 852013, 12, 0, 852016, 11, 0, 852017, 22, 262147, 983032, 22, 196609, 917512, 9, 0, 917533, 8, 0, 917534, 11, 0, 917544, 22, 262148, 917545, 5, 0, 983068, 7, 0, 983105, 22, 65540, 1048604, 5, 0, 1179684, 12, 0, 1310719, 22, 196610, 1376254, 22, 196609, 1310756, 9, 0, 1310785, 22, 65540, 1441790, 22, 196610, 1376292, 5, 0, 1376321, 22, 131076, 1507326, 22, 65536, 1441827, 9, 0, 1441857, 22, 65539, 1572862, 22, 196612, 1507394, 22, 196611, 1638398, 22, 3, 1572914, 22, 262147, 1572916, 5, 0, 1572930, 22, 65540, 1638424, 22, 131072, 1703960, 22, 65539, 1703984, 22, 131076, 1769506, 9, 0, 1769515, 12, 0, 1835030, 22, 131072, 1835048, 10, 0, 1835049, 10, 0, 1835050, 9, 0, 2228252, 22, 65536, 2228253, 22, 131073, 2228254, 22, 3, 2228255, 22, 131075, 2228288, 22, 131075, 2228289, 22, 65540, 2228290, 22, 65538, 2293769, 22, 262147, 2293787, 22, 196610, 2293816, 22, 131076, 2293817, 22, 1, 2293820, 22, 196612, 2293821, 22, 196609, 2293822, 22, 262148, 2293823, 22, 196612, 2359304, 22, 131076, 2359355, 22, 196609, 2424839, 22, 1, 2490374, 22, 131072, 2555908, 22, 65537, 2555909, 22, 196611 )
+tile_data = PoolIntArray( -393192, 22, 3, -393191, 22, 196612, -393190, 22, 131073, -393188, 22, 3, -393187, 22, 4, -393186, 22, 196609, -393185, 22, 196609, -393184, 22, 4, -327657, 22, 131075, -327647, 22, 65538, -327644, 22, 131074, -327643, 22, 131076, -327642, 22, 131076, -327622, 20, 0, -262128, 20, 0, -262122, 22, 262147, -262105, 22, 2, -196553, 22, 65539, -131033, 20, 0, -131019, 22, 196612, -131018, 22, 131074, -131017, 22, 131075, -65534, 22, 196612, -65505, 22, 131074, -65486, 22, 131073, -65485, 22, 131073, -65484, 22, 196610, 2, 22, 131075, 13, 22, 262147, 14, 22, 3, 15, 22, 131073, 16, 22, 131074, 17, 22, 196610, 18, 22, 131076, 19, 22, 196612, 20, 22, 4, 21, 22, 262147, 22, 22, 131075, 24, 22, 196610, 26, 22, 196612, 27, 22, 196611, 28, 22, 262147, 29, 22, 131073, 30, 22, 65537, 43, 22, 65539, 44, 22, 65536, 46, 22, 0, 47, 22, 131075, 48, 22, 131074, 49, 22, 65540, 58, 22, 65540, 59, 22, 65538, 60, 22, 196612, 61, 22, 131074, 65590, 22, 65539, 65591, 22, 2, 65592, 22, 262148, 65593, 22, 3, 131126, 22, 196608, 196612, 5, 0, 262149, 22, 262148, 262191, 11, 0, 262193, 10, 0, 262195, 9, 0, 262197, 7, 0, 262199, 9, 0, 327686, 7, 0, 327745, 22, 2, 393222, 9, 0, 393223, 8, 0, 393265, 5, 0, 393267, 6, 0, 393269, 10, 0, 393271, 12, 0, 393273, 11, 0, 393281, 22, 262147, 458756, 12, 0, 458757, 12, 0, 458799, 8, 0, 458817, 22, 196611, 524341, 11, 0, 524343, 12, 0, 524345, 7, 0, 524347, 11, 0, 524353, 22, 131072, 589889, 22, 196608, 720891, 22, 262147, 720892, 22, 196608, 655415, 9, 0, 655417, 5, 0, 786426, 22, 262147, 786427, 22, 2, 720921, 5, 0, 851961, 22, 65538, 786443, 9, 0, 786444, 12, 0, 786458, 22, 131076, 786459, 9, 0, 786462, 9, 0, 917496, 22, 3, 851976, 9, 0, 851977, 22, 131076, 851978, 22, 262148, 851998, 9, 0, 852013, 12, 0, 852016, 11, 0, 852017, 22, 262147, 983032, 22, 196609, 917512, 9, 0, 917533, 8, 0, 917534, 11, 0, 917544, 22, 262148, 917545, 5, 0, 983068, 7, 0, 983105, 22, 65540, 1048604, 5, 0, 1179684, 12, 0, 1310719, 22, 196610, 1376254, 22, 196609, 1310756, 9, 0, 1310785, 22, 65540, 1441790, 22, 196610, 1376292, 5, 0, 1376321, 22, 131076, 1507326, 22, 65536, 1441827, 9, 0, 1441857, 22, 65539, 1572862, 22, 196612, 1507394, 22, 196611, 1638398, 22, 3, 1572914, 22, 262147, 1572916, 5, 0, 1572930, 22, 65540, 1638424, 4, 0, 1703960, 7, 0, 1703984, 22, 131076, 1769506, 9, 0, 1769515, 12, 0, 1835030, 4, 0, 1835048, 10, 0, 1835049, 10, 0, 1835050, 9, 0, 2228252, 22, 65536, 2228253, 22, 131073, 2228254, 22, 3, 2228255, 22, 131075, 2228288, 22, 131075, 2228289, 22, 65540, 2228290, 22, 65538, 2293769, 22, 262147, 2293787, 22, 196610, 2293816, 22, 131076, 2293817, 22, 1, 2293820, 22, 196612, 2293821, 22, 196609, 2293822, 22, 262148, 2293823, 22, 196612, 2359304, 22, 131076, 2359355, 22, 196609, 2424839, 22, 1, 2490374, 22, 131072, 2555908, 22, 65537, 2555909, 22, 196611 )
 
 [node name="Fence" type="TileMap" parent="Tiles"]
 z_index = 2
@@ -402,9 +402,78 @@ visible = false
 texture = ExtResource( 8 )
 
 [node name="FootstepsInGrass" type="Node2D" parent="."]
+z_index = -1
 
 [node name="footstepInGrass" type="Sprite" parent="FootstepsInGrass"]
 position = Vector2( 136, 88 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass29" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 136, 24 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass30" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 136, 8 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass31" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 128.179, -5.59992 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass32" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 119.024, -19.0844 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass33" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 91.3923, -64 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass34" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 104, -51.0844 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass35" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 112, -37.592 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass36" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 83.3923, -80 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass37" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 72, -88 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass38" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 56, -96 )
+rotation = -0.785397
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass39" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 40.6852, -104 )
+rotation = -0.261799
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass40" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 36, -120 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass41" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 32, -136 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass42" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 32, -152 )
+texture = ExtResource( 12 )
+
+[node name="footstepInGrass43" type="Sprite" parent="FootstepsInGrass"]
+position = Vector2( 40, -168 )
+rotation = 0.261799
 texture = ExtResource( 12 )
 
 [node name="footstepInGrass2" type="Sprite" parent="FootstepsInGrass"]
@@ -536,8 +605,5 @@ texture = ExtResource( 12 )
 position = Vector2( -127.557, 196 )
 rotation = 1.0472
 texture = ExtResource( 12 )
-
-[node name="Enemy" parent="." instance=ExtResource( 13 )]
-position = Vector2( 301.715, 286.554 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]

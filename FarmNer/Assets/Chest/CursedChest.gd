@@ -28,18 +28,20 @@ func _on_Area2D_mouse_entered():
 func _on_Area2D_mouse_exited():
 	$Sprite.material.set_shader_param("turnOn", 0.0)
 
-# Detects if mouse is clicked
+# Detects if mouse is clicked, opens chest, and puts orbDefiler in chest
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (playerEntered == true && chestOpen == false):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
+				
+				# Opens chest
 				chestOpen = true
 				$Sprite.hide()
 				$ChestOpenFront.show()
 				$ChestOpenBack.show()
 				$ChestOpenSound/AudioStreamPlayer2D.play()
 				
-				# Adds items in random positions of box
+				# Adds item in random positions of box
 				random.randomize()
 				var randomNumber = random.randf_range(-2.433, 2.84)
 				add_child(orbDefilerInstance)

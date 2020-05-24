@@ -11,7 +11,7 @@ signal onPlayerEnterLVL3TO1
 
 # Does the player have the orb killer unlocked
 
-var orbDestroyerUnlocked = true
+var orbDestroyerUnlocked = false
 
 # Hurt Player
 
@@ -21,7 +21,6 @@ signal hurtPlayer
 
 var bandageCount = 0
 
-
 # Adds 1 bandage to the player
 func addBandage():
 	bandageCount += 1
@@ -29,3 +28,8 @@ func addBandage():
 # Removes 1 bandage from the player	
 func removeBandage():
 	bandageCount -= 1
+	
+# Resets all values (used for death)
+func resetAllGlobalValues():
+	bandageCount = 0
+	orbDestroyerUnlocked = false
