@@ -1,14 +1,14 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://FarmNer/Assets/Textures/chest.png" type="Texture" id=1]
-[ext_resource path="res://FarmNer/Assets/Chest/Chest.gd" type="Script" id=3]
+[ext_resource path="res://FarmNer/Assets/Chest/CursedChest.gd" type="Script" id=2]
 [ext_resource path="res://FarmNer/Assets/Textures/chestOpenFront.png" type="Texture" id=4]
 [ext_resource path="res://FarmNer/Assets/Chest/ChestOpenSound.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FarmNer/Assets/Textures/chestOpenBack.png" type="Texture" id=6]
 
-[sub_resource type="RectangleShape2D" id=7]
+[sub_resource type="RectangleShape2D" id=1]
 
-[sub_resource type="Shader" id=8]
+[sub_resource type="Shader" id=2]
 code = "shader_type canvas_item;
 
 uniform vec4 outline_color : hint_color;
@@ -30,11 +30,11 @@ void fragment()
 
 [sub_resource type="ShaderMaterial" id=3]
 resource_local_to_scene = true
-shader = SubResource( 8 )
+shader = SubResource( 2 )
 shader_param/outline_color = Color( 1, 1, 1, 1 )
 shader_param/turnOn = 0.0
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Sprite
 
 
@@ -55,7 +55,7 @@ func _on_Area2D_mouse_exited():
 [node name="Chest" type="Node2D"]
 scale = Vector2( 0.667101, 0.667101 )
 z_index = 2
-script = ExtResource( 3 )
+script = ExtResource( 2 )
 
 [node name="ChestOpenSound" parent="." instance=ExtResource( 5 )]
 
@@ -64,13 +64,13 @@ script = ExtResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -0.00703049, 1.47408 )
 scale = Vector2( 0.557719, 0.273114 )
-shape = SubResource( 7 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 3 )
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 11, 9 )
-script = SubResource( 10 )
+script = SubResource( 4 )
 
 [node name="ChestOpenFront" type="Sprite" parent="."]
 visible = false

@@ -1,9 +1,11 @@
 extends KinematicBody2D
  
-# Movement speeds, directions, and health
+# Movement speeds, directions, health, and shader variable
 const cSPEED = 75
 var speed = cSPEED
 var health = 500
+
+var shaderDissolve = 1.0
 
 # Signal to hurt the player
 signal hurtPlayer
@@ -19,9 +21,11 @@ func setPlayer(play):
  
 func _ready():
 	add_to_group("Enemy")
+	$Sprite.material.set_shader_param("value", shaderDissolve)
  
 func _physics_process(delta):
 	
+	print(shaderDissolve)
 	# Checks if the enemy should be taking damage
 	checkToTakeDamage()
 
@@ -58,8 +62,12 @@ func checkToTakeDamage():
 		if not $EnemyScream/AudioStreamPlayer2D.playing:
 			$EnemyScream/AudioStreamPlayer2D.play()
 		
+		
+		# FIX THISISIISISISI
 		if (health < 0):
-			queue_free()
+			$Tween.remove_all()
+			$Tween.interpolate_property(self, "shaderDissolve", 1.0, 0.0, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+			$Tween.start()
 
 		$Sprite.speed_scale = 0.5
 		speed = 15
@@ -93,8 +101,6 @@ func direction2str(direction):
 	else:
 		return directions[index]
 
-
-
-
-
-
+# Kills enemy when dissolve shader ends
+func _on_Tween_tween_completed(object, key):
+	queue_free()

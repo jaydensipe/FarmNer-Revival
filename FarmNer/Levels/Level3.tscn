@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://FarmNer/Levels/Level3.gd" type="Script" id=1]
 [ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=2]
@@ -7,9 +7,12 @@
 [ext_resource path="res://FarmNer/Assets/Tileset/RockTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FarmNer/Assets/Tileset/FencesTileset.tres" type="TileSet" id=7]
+[ext_resource path="res://FarmNer/Assets/Chest/CursedChest.tscn" type="PackedScene" id=8]
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=9]
 [ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.tscn" type="PackedScene" id=10]
 [ext_resource path="res://FarmNer/Assets/Chest/Chest.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=12]
+[ext_resource path="res://FarmNer/Assets/Torch/Torch.gd" type="Script" id=13]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -175,6 +178,19 @@ points = PoolVector2Array( 9.92597, 11.9778, 10.0558, 14.1197, 5.96674, 13.9899,
 22/shapes = [  ]
 22/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1.69661, 2.0805 )
+
+[sub_resource type="CircleShape2D" id=6]
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.13245, 1 )
+colors = PoolColorArray( 0.123047, 0.123047, 0.123047, 1, 0.742188, 0.742188, 0.742188, 1 )
+
+[sub_resource type="Gradient" id=8]
+offsets = PoolRealArray( 0, 0.602649, 0.993378 )
+colors = PoolColorArray( 0.968627, 0.803922, 0.0470588, 1, 0.988235, 0.639216, 0.027451, 1, 0.368627, 0.219608, 0.00784314, 1 )
+
 [sub_resource type="RectangleShape2D" id=4]
 
 [node name="Level3" type="Node2D"]
@@ -233,7 +249,7 @@ tile_set = ExtResource( 3 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 32
 format = 1
-tile_data = PoolIntArray( -131049, 20, 0, 262175, 12, 0, 393275, 12, 0, 720913, 5, 0, 786442, 22, 65536, 851990, 6, 0, 917515, 22, 2, 983051, 22, 196608, 983056, 7, 0, 983067, 6, 0, 1048587, 22, 65539, 1048622, 4, 0, 1179659, 22, 65536, 1245195, 22, 65537, 1245235, 11, 0, 1310731, 22, 3, 1310790, 22, 0, 1376266, 22, 0, 1376326, 22, 65536, 1441862, 22, 196608, 1507398, 22, 262144, 1572879, 22, 2, 1572880, 22, 262144, 1572881, 22, 262147, 1572882, 22, 65539, 1572883, 22, 196611, 1572884, 22, 65536, 1572907, 22, 65536, 1572908, 22, 131075, 1572909, 22, 131076, 1572933, 22, 131073, 1638438, 22, 131076, 1638439, 22, 1, 1638440, 22, 65539, 1638441, 22, 2, 1638442, 22, 262148, 1638469, 22, 196608 )
+tile_data = PoolIntArray( -131049, 20, 0, 262175, 12, 0, 393275, 12, 0, 720913, 5, 0, 786442, 22, 65536, 851990, 6, 0, 917515, 22, 2, 983051, 22, 196608, 983056, 7, 0, 983067, 6, 0, 1048587, 22, 65539, 1048622, 4, 0, 1179659, 22, 65536, 1245195, 22, 65537, 1245235, 11, 0, 1310731, 22, 3, 1310790, 22, 0, 1376266, 22, 0, 1376326, 22, 196610, 1572879, 22, 2, 1572880, 22, 262144, 1572881, 22, 262147, 1572882, 22, 65539, 1572883, 22, 196611, 1572884, 22, 65536, 1572907, 22, 65536, 1572908, 22, 131075, 1572909, 22, 131076, 1572933, 22, 65540, 1638438, 22, 131076, 1638439, 22, 1, 1638440, 22, 65539, 1638441, 22, 2, 1638442, 22, 262148, 1638469, 22, 196608 )
 
 [node name="Fence" type="TileMap" parent="Tiles"]
 z_index = 2
@@ -262,6 +278,78 @@ position = Vector2( 851.262, 56 )
 
 [node name="Torch5" parent="Lighting" instance=ExtResource( 6 )]
 position = Vector2( 728, 74.4001 )
+
+[node name="Torch6" type="Node2D" parent="Lighting"]
+position = Vector2( 1040.69, 81.8876 )
+script = ExtResource( 13 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Lighting/Torch6"]
+position = Vector2( -0.975626, 4.91565 )
+scale = Vector2( 0.720002, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lighting/Torch6/StaticBody2D"]
+shape = SubResource( 5 )
+
+[node name="Area2D" type="Area2D" parent="Lighting/Torch6"]
+position = Vector2( 0.178722, -0.0672455 )
+scale = Vector2( 0.485404, -0.0617473 )
+collision_layer = 262144
+collision_mask = 262144
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Lighting/Torch6/Area2D"]
+position = Vector2( -0.0758514, 1.27417 )
+scale = Vector2( 22.7495, 99.0502 )
+shape = SubResource( 6 )
+
+[node name="Tween" type="Tween" parent="Lighting/Torch6"]
+repeat = true
+playback/repeat = true
+
+[node name="Sprite" type="Sprite" parent="Lighting/Torch6"]
+texture = ExtResource( 9 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+
+[node name="Light2D" type="Light2D" parent="Lighting/Torch6"]
+position = Vector2( -4.76837e-07, 1.90735e-06 )
+scale = Vector2( 0.266097, 0.134177 )
+texture = ExtResource( 12 )
+texture_scale = 2.04
+color = Color( 0.447059, 0.054902, 0.054902, 1 )
+energy = 1.15
+
+[node name="Light2D2" type="Light2D" parent="Lighting/Torch6"]
+position = Vector2( -0.987931, 4.99173 )
+scale = Vector2( 0.0637251, 0.0321328 )
+texture = ExtResource( 12 )
+texture_scale = 2.04
+color = Color( 0.27451, 0.0313726, 0.0313726, 1 )
+energy = 1.15
+
+[node name="SmokeParticle" type="CPUParticles2D" parent="Lighting/Torch6"]
+position = Vector2( -0.905588, -6.3028 )
+rotation = 3.14159
+amount = 4
+lifetime = 0.8
+speed_scale = 0.3
+explosiveness = 0.61
+emission_shape = 1
+emission_sphere_radius = 2.0
+angular_velocity = 464.52
+linear_accel = 6.45
+color_ramp = SubResource( 7 )
+
+[node name="FireParticle" type="CPUParticles2D" parent="Lighting/Torch6"]
+position = Vector2( -1.12303, -3.11386 )
+rotation = 3.11216
+lifetime = 0.6
+speed_scale = 0.3
+explosiveness = 0.56
+randomness = 0.14
+emission_shape = 1
+emission_sphere_radius = 1.0
+radial_accel = 15.22
+color_ramp = SubResource( 8 )
 
 [node name="BlackFadeZones" type="Node2D" parent="."]
 
@@ -314,8 +402,10 @@ position = Vector2( 360, 82.4001 )
 [node name="Chest2" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 883.392, 264 )
 
-[node name="Chest3" parent="Chests" instance=ExtResource( 11 )]
-position = Vector2( 1024, 96 )
+[node name="Chest4" parent="Chests" instance=ExtResource( 8 )]
+modulate = Color( 0.803922, 0.466667, 0.466667, 1 )
+position = Vector2( 1024, 95.4875 )
+[connection signal="tween_all_completed" from="Lighting/Torch6/Tween" to="Lighting/Torch6" method="_on_Tween_tween_all_completed"]
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone3" to="." method="_on_Zone3_body_entered"]
