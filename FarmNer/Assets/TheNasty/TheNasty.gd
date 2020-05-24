@@ -6,10 +6,14 @@ var colorRand2
 var colorRand3
 var playerEntered = false
 
+var enemyLoad = load("res://FarmNer/Enemy/Enemy.tscn")
+
+var level2SpawnPositionArray = [Vector2(52, 404), Vector2(88, 404), Vector2(128 , 404), Vector2(72, 443), Vector2(32, 480), Vector2(344, 320), Vector2(392, 320), 
+Vector2(440, 344), Vector2(328, 372), Vector2(444 , 384)]
+
 func _ready():
 	randomizeColor()
 	
-
 # Sets lights and particles to random colors
 func randomizeColor():
 	rng.randomize()
@@ -35,11 +39,14 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (playerEntered == true && GLOBAL.orbDestroyerUnlocked == true):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
-				print("orb clicked")
+				var enemyInstance = enemyLoad.instance()
+				add_child(enemyInstance)
+				enemyInstance.global_position = level2SpawnPositionArray[0]
+				print(enemyInstance.global_position)
 
 # Detects if player enters orb range
 func _on_PlayerCollisionNasty_body_entered(body):
-		playerEntered = true
+	playerEntered = true
 
 # Detects if player leaves orb range
 func _on_PlayerCollisionNasty_body_exited(body):

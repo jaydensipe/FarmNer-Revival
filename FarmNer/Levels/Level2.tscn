@@ -183,6 +183,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 0.995415 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
+visible = false
 color = Color( 0.0117647, 0, 0.027451, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]

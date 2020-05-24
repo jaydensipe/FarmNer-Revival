@@ -25,7 +25,6 @@ func _ready():
  
 func _physics_process(delta):
 	
-	print(shaderDissolve)
 	# Checks if the enemy should be taking damage
 	checkToTakeDamage()
 
@@ -62,13 +61,8 @@ func checkToTakeDamage():
 		if not $EnemyScream/AudioStreamPlayer2D.playing:
 			$EnemyScream/AudioStreamPlayer2D.play()
 		
-		
-		# FIX THISISIISISISI
 		if (health < 0):
-			$Tween.remove_all()
-			$Tween.interpolate_property(self, "shaderDissolve", 1.0, 0.0, 1.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-			$Tween.start()
-
+			queue_free()
 		$Sprite.speed_scale = 0.5
 		speed = 15
 #
@@ -101,6 +95,6 @@ func direction2str(direction):
 	else:
 		return directions[index]
 
-# Kills enemy when dissolve shader ends
+# Kills enemy when dissolve shader ends IMPLENET THIS DONT WORK
 func _on_Tween_tween_completed(object, key):
 	queue_free()

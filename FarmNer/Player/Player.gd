@@ -23,11 +23,11 @@ var playerHealth = 120
 # Makes enemies target player
 func _ready():
 	yield(get_tree(), "idle_frame")
-	get_tree().call_group("Enemy", "setPlayer", self)
 	GLOBAL.connect("hurtPlayer", self, "_player_Take_Damage")
 	$BandageSound.connect("SoundFinished", self, "_bandage_Finished")
 
 func _physics_process(delta):
+	get_tree().call_group("Enemy", "setPlayer", self)
 	bandageHeal()
 	get_input()
 	torchDetection()

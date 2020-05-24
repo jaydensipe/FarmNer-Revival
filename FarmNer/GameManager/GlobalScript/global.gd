@@ -11,7 +11,7 @@ signal onPlayerEnterLVL3TO1
 
 # Does the player have the orb killer unlocked
 
-var orbDestroyerUnlocked = false
+var orbDestroyerUnlocked = true
 
 # Hurt Player
 
