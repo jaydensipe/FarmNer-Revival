@@ -39,7 +39,12 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				$Sprite.hide()
 				$ChestOpenFront.show()
 				$ChestOpenBack.show()
+				
+				# Plays chest open sound
 				$ChestOpenSound/AudioStreamPlayer2D.play()
+				
+				# Plays squishy sound
+				$PickupSound/OrbDefilerPickup.play()
 				
 				# Adds item in random positions of box
 				random.randomize()

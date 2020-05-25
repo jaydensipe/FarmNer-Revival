@@ -39,7 +39,7 @@ func _on_Area2D_mouse_exited():
 
 # Detects if mouse is clicked
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	if (playerEntered == true && GLOBAL.orbDestroyerUnlocked == true):
+	if (playerEntered == true && GLOBAL.orbDestroyerUnlocked == true && orbIsDead == false):
 		if event is InputEventMouseButton:
 			if event.button_index == BUTTON_LEFT and event.pressed:
 				
@@ -53,6 +53,11 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				$TheNastySound/zombieSound.play()
 				$TheNastySound/AudioStreamPlayer2D.stop()
 				orbIsDead = true
+				$Sprite.material.set_shader_param("isOrbDead", orbIsDead)
+				$Sprite.material.set_shader_param("value", 1.0)
+				$Tween.remove_all()
+				$Tween.interpolate_property($Sprite.get_material(), "shader_param/value", 1, 0, 2.4, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				$Tween.start()
 				
 				rng.randomize()
 				var randomAmountOfEnemies = rng.randi_range(2, 5)
@@ -80,3 +85,7 @@ func spawnEnemies(howMany):
 		add_child(enemyInstance)
 		arrayForPrevention.insert(i, randomArrayForEnemySpawn)
 		enemyInstance.global_position = level2SpawnPositionArray[arrayForPrevention[i]]
+
+# Removes orb after tween
+func _on_Tween_tween_completed(object, key):
+	$StaticBody2D/CollisionShape2D.disabled = true

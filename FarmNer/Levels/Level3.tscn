@@ -280,7 +280,7 @@ position = Vector2( 851.262, 56 )
 position = Vector2( 728, 74.4001 )
 
 [node name="Torch6" type="Node2D" parent="Lighting"]
-position = Vector2( 1040.69, 81.8876 )
+position = Vector2( 528.69, 79.3158 )
 script = ExtResource( 13 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Lighting/Torch6"]
@@ -397,14 +397,14 @@ position = Vector2( 360.188, 281.35 )
 z_index = 5
 
 [node name="Chest" parent="Chests" instance=ExtResource( 11 )]
-position = Vector2( 360, 82.4001 )
+position = Vector2( 1024, 93.899 )
 
 [node name="Chest2" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 883.392, 264 )
 
 [node name="Chest4" parent="Chests" instance=ExtResource( 8 )]
 modulate = Color( 0.803922, 0.466667, 0.466667, 1 )
-position = Vector2( 1024, 95.4875 )
+position = Vector2( 512, 92.9157 )
 [connection signal="tween_all_completed" from="Lighting/Torch6/Tween" to="Lighting/Torch6" method="_on_Tween_tween_all_completed"]
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]

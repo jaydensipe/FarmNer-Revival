@@ -5,8 +5,6 @@ const cSPEED = 75
 var speed = cSPEED
 var health = 500
 
-var shaderDissolve = 1.0
-
 # Signal to hurt the player
 signal hurtPlayer
 
@@ -21,7 +19,6 @@ func setPlayer(play):
  
 func _ready():
 	add_to_group("Enemy")
-	$Sprite.material.set_shader_param("value", shaderDissolve)
  
 func _physics_process(delta):
 	
@@ -44,7 +41,6 @@ func _physics_process(delta):
 	if not $FootstepSound/enemyRun.playing:
 		$FootstepSound/enemyRun.play()
 		
-		
 	# Hurts player if raycast collides
 	if $RayCast2D.is_colliding():
 		GLOBAL.emit_signal("hurtPlayer")
@@ -55,17 +51,26 @@ func checkToTakeDamage():
 		$EnemyScream/AudioStreamPlayer2D.stop()
 		$Sprite.speed_scale = 2
 		speed = cSPEED
+		$DeathParticles.visible = false
 	elif ($LightAttackDetection.get_overlapping_areas().empty() == false):
+		
+		$Sprite.speed_scale = 0.5
+		speed = 15
+		
+		# Damages the enemy
 		health -= 3
 		
+		# Changes sprite color based on health, and eventually makes sprite invisible
+		$Sprite.modulate = Color(0.18, 0.11, 0.03) * Color (health/100, health/100, health/100)
+		$DeathParticles.visible = true
+		
+		# Plays run audio
 		if not $EnemyScream/AudioStreamPlayer2D.playing:
 			$EnemyScream/AudioStreamPlayer2D.play()
 		
+		# Kills enemy if health goes below 0 
 		if (health < 0):
 			queue_free()
-		$Sprite.speed_scale = 0.5
-		speed = 15
-#
 # Converts direction to string and controls raycast direction
 func direction2str(direction):
 	var angle = direction.angle()
@@ -94,7 +99,3 @@ func direction2str(direction):
 		return directions[0]
 	else:
 		return directions[index]
-
-# Kills enemy when dissolve shader ends IMPLENET THIS DONT WORK
-func _on_Tween_tween_completed(object, key):
-	queue_free()

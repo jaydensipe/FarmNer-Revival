@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FarmNer/Sounds/Pickup/orbDefilerPickup.wav" type="AudioStream" id=1]
+
+[node name="PickupSound" type="Node2D"]
+
+[node name="BandagePickup" type="AudioStreamPlayer2D" parent="."]
+
+[node name="OrbDefilerPickup" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )

@@ -33,7 +33,7 @@ shader_param/turnOn = 0.0
 
 [sub_resource type="RectangleShape2D" id=4]
 
-[node name="Bandage" type="Node2D"]
+[node name="OrbDefiler" type="Node2D"]
 scale = Vector2( 0.485, 0.485 )
 script = ExtResource( 2 )
 

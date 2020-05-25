@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="Gradient" id=1]
+
+[node name="DeathParticles" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 64
+lifetime = 3.0
+speed_scale = 2.0
+randomness = 1.0
+emission_shape = 1
+emission_sphere_radius = 67.18
+gravity = Vector2( 0, -98 )
+initial_velocity = 473.12
+initial_velocity_random = 0.45
+scale_amount = 100.0
+scale_amount_random = 1.0
+color_ramp = SubResource( 1 )
+hue_variation = -0.86
