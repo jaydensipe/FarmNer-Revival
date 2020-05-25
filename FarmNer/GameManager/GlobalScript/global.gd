@@ -9,6 +9,10 @@ signal onPlayerEnterLVL2TO1
 signal onPlayerEnterLVL1TO3
 signal onPlayerEnterLVL3TO1
 
+# Turn off flashlight signal
+
+signal turnOffFlashlight
+
 # Does the player have the orb killer unlocked
 
 var orbDestroyerUnlocked = false

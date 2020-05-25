@@ -3,6 +3,9 @@ extends Node2D
 var mousePos
 var flashlightOn = false
 
+func _ready():
+	GLOBAL.connect("turnOffFlashlight", self, "_turn_Off_Flashlight")
+
 func _physics_process(delta):
 	mousePos = get_local_mouse_position()
 	turnOnOffFlashlight()
@@ -51,3 +54,8 @@ func attackBeam():
 
 func _on_Tween_tween_completed(object, key):
 	$FlashLightBeamSound/AudioStreamPlayer2D.stop()
+	
+# Turns off flashlight from global
+func _turn_Off_Flashlight():
+	flashlightOn = true
+	$Sprite/Beam.enabled = 0
