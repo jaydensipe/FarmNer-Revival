@@ -8,6 +8,12 @@ signal onPlayerEnterLVL1TO2
 signal onPlayerEnterLVL2TO1
 signal onPlayerEnterLVL1TO3
 signal onPlayerEnterLVL3TO1
+signal onPlayerEnterLVL3TO4
+signal onPlayerEnterLVL4TO3
+
+# Current level of player
+
+var currentLevelPlayer = 1
 
 # Turn off flashlight signal
 
@@ -16,6 +22,10 @@ signal turnOffFlashlight
 # Does the player have the orb killer unlocked
 
 var orbDestroyerUnlocked = false
+
+# Does the player have the dynamite
+
+var dynamiteAquired = false
 
 # Hurt Player
 

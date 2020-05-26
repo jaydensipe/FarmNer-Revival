@@ -13,4 +13,3 @@ pitch_scale = 0.85
 [node name="enemyRun" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -25.0
-max_distance = 250.0

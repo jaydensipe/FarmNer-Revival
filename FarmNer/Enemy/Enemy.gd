@@ -1,7 +1,7 @@
 extends KinematicBody2D
  
 # Movement speeds, directions, health, and shader variable
-const cSPEED = 75
+const cSPEED = 60
 var speed = cSPEED
 var health = 500
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://FarmNer/Levels/Level2.gd" type="Script" id=1]
 [ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=2]
@@ -7,9 +7,15 @@
 [ext_resource path="res://FarmNer/Assets/Tileset/RockTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.tscn" type="PackedScene" id=6]
 [ext_resource path="res://FarmNer/Assets/Tileset/FencesTileset.tres" type="TileSet" id=7]
+[ext_resource path="res://FarmNer/Assets/Textures/nastyEatingHuman.png" type="Texture" id=8]
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=9]
-[ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FarmNer/Assets/Textures/smoke.png" type="Texture" id=10]
 [ext_resource path="res://FarmNer/Assets/Chest/Chest.tscn" type="PackedScene" id=11]
+[ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=12]
+[ext_resource path="res://FarmNer/Assets/TheNasty/TheNastySound.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.gd" type="Script" id=14]
+[ext_resource path="res://FarmNer/Assets/Dynamite/Dynamite.tscn" type="PackedScene" id=15]
+[ext_resource path="res://FarmNer/Assets/Textures/deadHuman2.png" type="Texture" id=16]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -176,6 +182,70 @@ glow_enabled = true
 
 [sub_resource type="RectangleShape2D" id=4]
 
+[sub_resource type="RectangleShape2D" id=9]
+
+[sub_resource type="Shader" id=10]
+code = "shader_type canvas_item;
+
+uniform vec4 outline_color : hint_color;
+uniform bool isOrbDead = false;
+uniform float turnOn = 0.0;
+uniform float value : hint_range(0, 1);
+uniform sampler2D noise_texture;
+
+void fragment()
+{
+	vec4 current_pixel = texture(TEXTURE, UV);
+	vec4 noise_pixel = texture(noise_texture, UV);
+	float size_x = 1.0/float(textureSize(TEXTURE, 0).x) * turnOn;
+	float size_y = 1.0/float(textureSize(TEXTURE, 0).y) * turnOn;
+	vec4 sprite_color = texture(TEXTURE, UV);
+	float alpha = -4.0 * sprite_color.a;
+	alpha += texture(TEXTURE, UV + vec2(size_x, 0)).a;
+	alpha += texture(TEXTURE, UV + vec2(-size_x, 0)).a;
+	alpha += texture(TEXTURE, UV + vec2(0, size_y)).a;
+	alpha += texture(TEXTURE, UV + vec2(0, -size_y)).a;
+	vec4 final_color = mix(sprite_color, outline_color, clamp(alpha, 0.0, 1.0));
+	if (isOrbDead == false)
+	{
+		COLOR = vec4(final_color.rgb, clamp(abs(alpha) + sprite_color.a, 0.0, 1.0));
+	}
+	else if (isOrbDead == true)
+	{
+		if(noise_pixel.r > value)
+	{
+		COLOR.a -= 1f;
+	}
+	else
+	{
+		COLOR = current_pixel
+	}
+	}
+	
+}
+"
+
+[sub_resource type="OpenSimplexNoise" id=11]
+octaves = 9
+
+[sub_resource type="NoiseTexture" id=12]
+width = 2048
+height = 2048
+noise = SubResource( 11 )
+
+[sub_resource type="ShaderMaterial" id=16]
+resource_local_to_scene = true
+shader = SubResource( 10 )
+shader_param/outline_color = Color( 1, 0, 0, 1 )
+shader_param/isOrbDead = false
+shader_param/turnOn = 0.0
+shader_param/value = 1.0
+shader_param/noise_texture = SubResource( 12 )
+
+[sub_resource type="CircleShape2D" id=14]
+
+[sub_resource type="RectangleShape2D" id=15]
+
 [node name="Level2" type="Node2D"]
 script = ExtResource( 1 )
 
@@ -272,14 +342,89 @@ position = Vector2( 57.525, 4.15701 )
 scale = Vector2( 4.85258, 4.14327 )
 shape = SubResource( 4 )
 
+[node name="DeadHumans" type="Node2D" parent="."]
+position = Vector2( 364.828, 584.576 )
+
+[node name="deadHuman2" type="Sprite" parent="DeadHumans"]
+position = Vector2( -32.5836, 9.20514 )
+texture = ExtResource( 16 )
+
 [node name="TheNasties" type="Node2D" parent="."]
 
-[node name="TheNasty" parent="TheNasties" instance=ExtResource( 10 )]
-position = Vector2( 354.949, 588.844 )
+[node name="TheNasty" type="Node2D" parent="TheNasties"]
+position = Vector2( 360, 568 )
+script = ExtResource( 14 )
+
+[node name="Tween" type="Tween" parent="TheNasties/TheNasty"]
+
+[node name="TheNastySound" parent="TheNasties/TheNasty" instance=ExtResource( 13 )]
+position = Vector2( -3.16492, 1.41275 )
+scale = Vector2( 0.131266, 0.0971233 )
+
+[node name="Light2D" type="Light2D" parent="TheNasties/TheNasty"]
+position = Vector2( -2.03736, 3.78844 )
+scale = Vector2( 0.159584, 0.142499 )
+texture = ExtResource( 12 )
+mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TheNasties/TheNasty"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/StaticBody2D"]
+position = Vector2( -3.16492, 2.24607 )
+shape = SubResource( 9 )
+
+[node name="Sprite" type="Sprite" parent="TheNasties/TheNasty"]
+material = SubResource( 16 )
+position = Vector2( -6.78758, 10.7847 )
+texture = ExtResource( 8 )
+region_rect = Rect2( 8, -8, 88, 56 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="TheNasties/TheNasty"]
+position = Vector2( -3.47111, 1.10718 )
+rotation = -1.58388
+scale = Vector2( 0.0386065, 0.0325068 )
+amount = 16
+speed_scale = 0.5
+texture = ExtResource( 10 )
+emission_shape = 1
+emission_sphere_radius = 78.0
+initial_velocity = 182.8
+angular_velocity = -371.61
+angular_velocity_random = 0.52
+
+[node name="Area2D" type="Area2D" parent="TheNasties/TheNasty"]
+scale = Vector2( 1.30785, 1.30785 )
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/Area2D"]
+position = Vector2( -3.16492, 1.41275 )
+scale = Vector2( 0.922848, 0.922848 )
+shape = SubResource( 14 )
+
+[node name="PlayerCollisionNasty" type="Area2D" parent="TheNasties/TheNasty"]
+scale = Vector2( 1.48689, 1.48689 )
+collision_layer = 8192
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/PlayerCollisionNasty"]
+position = Vector2( -3.16492, 2.24607 )
+scale = Vector2( 3.06093, 3.06093 )
+shape = SubResource( 15 )
 
 [node name="Chests" type="Node2D" parent="."]
 z_index = 5
 
 [node name="Chest" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 427.818, 308.501 )
+
+[node name="Dynamite" parent="." instance=ExtResource( 15 )]
+position = Vector2( 324.598, 596.504 )
+scale = Vector2( 0.722122, 0.722122 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
+[connection signal="tween_completed" from="TheNasties/TheNasty/Tween" to="TheNasties/TheNasty" method="_on_Tween_tween_completed"]
+[connection signal="input_event" from="TheNasties/TheNasty/Area2D" to="TheNasties/TheNasty" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="TheNasties/TheNasty/Area2D" to="TheNasties/TheNasty" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="TheNasties/TheNasty/Area2D" to="TheNasties/TheNasty" method="_on_Area2D_mouse_exited"]
+[connection signal="body_entered" from="TheNasties/TheNasty/PlayerCollisionNasty" to="TheNasties/TheNasty" method="_on_PlayerCollisionNasty_body_entered"]
+[connection signal="body_exited" from="TheNasties/TheNasty/PlayerCollisionNasty" to="TheNasties/TheNasty" method="_on_PlayerCollisionNasty_body_exited"]
