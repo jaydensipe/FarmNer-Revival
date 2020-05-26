@@ -35,6 +35,10 @@ signal hurtPlayer
 
 var bandageCount = 0
 
+# Orb Kills the player has
+
+var orbKills = 0
+
 # Adds 1 bandage to the player
 func addBandage():
 	bandageCount += 1
@@ -46,4 +50,7 @@ func removeBandage():
 # Resets all values (used for death)
 func resetAllGlobalValues():
 	bandageCount = 0
+	currentLevelPlayer = 1
+	orbKills = 0
 	orbDestroyerUnlocked = false
+	dynamiteAquired = false

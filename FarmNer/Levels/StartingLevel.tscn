@@ -244,7 +244,7 @@ shader_param/turnOn = 0.0
 shader_param/value = 1.0
 shader_param/noise_texture = SubResource( 8 )
 
-[sub_resource type="RectangleShape2D" id=12]
+[sub_resource type="RectangleShape2D" id=10]
 
 [node name="StartingLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -456,7 +456,7 @@ angular_velocity_random = 0.52
 z_index = 5
 
 [node name="Chest" parent="Chests" instance=ExtResource( 11 )]
-position = Vector2( 24, 135.232 )
+position = Vector2( 24, 120 )
 
 [node name="Chest2" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 500.738, 128 )
@@ -472,7 +472,7 @@ scale = Vector2( 0.206241, 2.23811 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleBarrier/StaticBody2D2"]
 scale = Vector2( 2.49704, -2.49515 )
-shape = SubResource( 12 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="InvisibleBarrier/StaticBody2D2"]
 visible = false
@@ -485,7 +485,7 @@ scale = Vector2( 0.206241, 2.23811 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleBarrier/StaticBody2D4"]
 scale = Vector2( 2.49704, -2.49515 )
-shape = SubResource( 12 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="InvisibleBarrier/StaticBody2D4"]
 visible = false
@@ -497,7 +497,7 @@ scale = Vector2( 0.206241, 2.23811 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InvisibleBarrier/StaticBody2D3"]
 scale = Vector2( 2.49704, -2.49515 )
-shape = SubResource( 12 )
+shape = SubResource( 10 )
 
 [node name="Sprite" type="Sprite" parent="InvisibleBarrier/StaticBody2D3"]
 visible = false

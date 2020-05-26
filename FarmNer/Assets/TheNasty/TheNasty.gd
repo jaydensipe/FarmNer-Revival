@@ -72,6 +72,10 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 				$Tween.interpolate_property($Sprite.get_material(), "shader_param/value", 1, 0, 2.4, Tween.TRANS_LINEAR, Tween.EASE_IN)
 				$Tween.start()
 				
+				# Adds one to orbKills
+				
+				GLOBAL.orbKills += 1
+				
 				# Turns off flashlight
 				GLOBAL.emit_signal("turnOffFlashlight")
 				

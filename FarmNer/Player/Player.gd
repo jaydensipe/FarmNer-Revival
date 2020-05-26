@@ -199,3 +199,7 @@ func _bandage_Finished():
 		
 		if (playerHealth > 120):
 			playerHealth = 120
+	
+
+		
+	

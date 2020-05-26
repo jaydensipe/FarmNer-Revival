@@ -26,9 +26,9 @@ texture = ExtResource( 1 )
 offset = Vector2( 16.9845, -16.9956 )
 
 [node name="Beam" type="Light2D" parent="Sprite"]
-position = Vector2( 67.8823, -67.8822 )
+position = Vector2( 67.8822, -67.8822 )
 rotation = -0.785398
-scale = Vector2( 4.941, 7.682 )
+scale = Vector2( 4.941, 9 )
 texture = ExtResource( 4 )
 offset = Vector2( 315.589, -0.0212121 )
 color = Color( 0.780392, 0.466667, 0.392157, 1 )

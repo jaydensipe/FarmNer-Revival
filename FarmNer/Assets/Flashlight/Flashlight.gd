@@ -49,7 +49,7 @@ func attackBeam():
 		
 			# Reverse interpolates flashlight beam
 			$Tween.stop($Sprite/Beam)
-			$Tween.interpolate_property($Sprite/Beam, "scale", $Sprite/Beam.scale, Vector2(4.941, 7.682), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
+			$Tween.interpolate_property($Sprite/Beam, "scale", $Sprite/Beam.scale, Vector2(4.941, 9.0), 1.0, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 			$Tween.interpolate_property($Sprite/Beam, "energy", $Sprite/Beam.energy, 1.5, 0.5, Tween.TRANS_LINEAR, Tween.EASE_OUT_IN)
 
 func _on_Tween_tween_completed(object, key):
