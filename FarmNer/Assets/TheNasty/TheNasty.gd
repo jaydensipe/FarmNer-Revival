@@ -17,6 +17,8 @@ Vector2(440, 344), Vector2(328, 372), Vector2(444 , 384)]
 # Sets lights and particles to random colors
 func _ready():
 	randomizeColor()
+	if (orbIsDead == false):
+		$TheNastySound/AudioStreamPlayer2D.play()
 	
 func randomizeColor():
 	rng.randomize()
@@ -92,3 +94,4 @@ func spawnEnemies(howMany):
 # Removes orb after tween
 func _on_Tween_tween_completed(object, key):
 	$StaticBody2D/CollisionShape2D.disabled = true
+	$TheNastySound/AudioStreamPlayer2D.stop()

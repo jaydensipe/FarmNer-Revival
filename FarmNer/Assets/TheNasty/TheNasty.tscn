@@ -123,8 +123,8 @@ shape = SubResource( 6 )
 
 [node name="PlayerCollisionNasty" type="Area2D" parent="."]
 scale = Vector2( 1.48689, 1.48689 )
-collision_layer = 8193
-collision_mask = 8193
+collision_layer = 8192
+collision_mask = 8192
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCollisionNasty"]
 position = Vector2( -3.16492, 2.24607 )
