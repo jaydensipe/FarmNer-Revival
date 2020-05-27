@@ -175,7 +175,7 @@ points = PoolVector2Array( 9.92597, 11.9778, 10.0558, 14.1197, 5.96674, 13.9899,
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 
 [node name="Level3" type="Node2D"]
 script = ExtResource( 1 )
@@ -269,17 +269,17 @@ position = Vector2( 728, 74.4001 )
 [node name="BlackFadeZones" type="Node2D" parent="."]
 
 [node name="Zone1" type="Area2D" parent="BlackFadeZones"]
-position = Vector2( 1040.69, 248 )
+position = Vector2( 1088.28, 249.168 )
 collision_layer = 131072
 collision_mask = 131072
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone1"]
 position = Vector2( 57.525, 4.15701 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="Zone2" type="Area2D" parent="BlackFadeZones"]
-position = Vector2( 176, 128 )
+position = Vector2( 143.269, 121.62 )
 scale = Vector2( 1.17262, 1.16204 )
 collision_layer = 131072
 collision_mask = 131072
@@ -287,10 +287,10 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone2"]
 position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="Zone3" type="Area2D" parent="BlackFadeZones"]
-position = Vector2( 814.024, 8 )
+position = Vector2( 805.851, -15.1578 )
 scale = Vector2( 1.17262, 1.16204 )
 collision_layer = 131072
 collision_mask = 131072
@@ -298,7 +298,7 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone3"]
 position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="TheNasties" type="Node2D" parent="."]
 
@@ -328,6 +328,5 @@ position = Vector2( 401.936, 90.5462 )
 
 [node name="Chest3" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 802.879, 262.379 )
-[connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone3" to="." method="_on_Zone3_body_entered"]
