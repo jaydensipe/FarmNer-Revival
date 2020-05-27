@@ -3,14 +3,14 @@
 [ext_resource path="res://FarmNer/Assets/Fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://FarmNer/Assets/TextScenes/OrbDefilerUnlockText.gd" type="Script" id=2]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode unshaded;"
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 256
 font_data = ExtResource( 1 )
 
@@ -142,12 +142,12 @@ script = ExtResource( 2 )
 
 [node name="Label3" type="Label" parent="."]
 modulate = Color( 0.262745, 0, 0, 0 )
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = -0.387421
 margin_top = -30.4919
 margin_right = 3455.61
 margin_bottom = 484.508
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Eradicate the Orbs...
 Release your Daughter..."
 align = 1
@@ -158,11 +158,11 @@ __meta__ = {
 
 [node name="Label2" type="Label" parent="."]
 modulate = Color( 0.482353, 0, 0, 0 )
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_top = -16.2422
 margin_right = 3456.0
 margin_bottom = 498.758
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Eradicate the Orbs...
 Release your Daughter..."
 align = 1
@@ -173,12 +173,12 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.678431, 0, 0, 0 )
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 0.288208
 margin_top = -0.415947
 margin_right = 3456.29
 margin_bottom = 514.584
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 text = "Eradicate the Orbs...
 Release your Daughter..."
 align = 1

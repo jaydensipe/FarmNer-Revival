@@ -10,6 +10,7 @@ signal onPlayerEnterLVL1TO3
 signal onPlayerEnterLVL3TO1
 signal onPlayerEnterLVL3TO4
 signal onPlayerEnterLVL4TO3
+signal onPlayerEnterLVL1TO6
 
 # Current level of player
 

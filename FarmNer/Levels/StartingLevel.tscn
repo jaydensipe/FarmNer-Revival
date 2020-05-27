@@ -398,6 +398,17 @@ position = Vector2( 0.513489, 0.774597 )
 scale = Vector2( 4.85258, 4.14327 )
 shape = SubResource( 4 )
 
+[node name="Zone3" type="Area2D" parent="BlackFadeZones"]
+position = Vector2( -24, 176 )
+scale = Vector2( 1.17262, 1.16204 )
+collision_layer = 131072
+collision_mask = 131072
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone3"]
+position = Vector2( 0.513489, 0.774597 )
+scale = Vector2( 4.85258, 4.14327 )
+shape = SubResource( 4 )
+
 [node name="TheNasties" type="Node2D" parent="."]
 
 [node name="TheNasty" parent="TheNasties" instance=ExtResource( 10 )]
@@ -709,4 +720,5 @@ rotation = 1.0472
 texture = ExtResource( 12 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="body_entered" from="BlackFadeZones/Zone2" to="." method="_on_Zone2_body_entered"]
+[connection signal="body_entered" from="BlackFadeZones/Zone3" to="." method="_on_Zone3_body_entered"]
 [connection signal="tween_completed" from="TheNasties/TheNasty4/Tween" to="TheNasties/TheNasty4" method="_on_Tween_tween_completed"]

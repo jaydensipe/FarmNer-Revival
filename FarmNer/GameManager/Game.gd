@@ -6,12 +6,14 @@ var startingLevel = preload("res://FarmNer/Levels/StartingLevel.tscn")
 var level2 = preload("res://FarmNer/Levels/Level2.tscn")
 var level3 = preload("res://FarmNer/Levels/Level3.tscn")
 var level4 = preload("res://FarmNer/Levels/Level4.tscn")
+var level6 = preload("res://FarmNer/Levels/EndLevel.tscn")
 
 # Level Instances
 var startingLevelInstance = startingLevel.instance()
 var level2Instance = level2.instance()
 var level3Instance = level3.instance()
 var level4Instance = level4.instance()
+var level6Instance = level6.instance()
 
 # Changes from Lvl 1 -> 2
 func _on_PlayerEnter_LVL1TO2():
@@ -54,6 +56,12 @@ func _on_PlayerEnter_LVL4TO3():
 	call_deferred("add_child", level3Instance)
 	$Player.set_deferred("position", Vector2(285, 125))
 	call_deferred("levelChangeBlackFade")
+	
+func _on_PlayerEnter_LVL1TO6():
+	call_deferred("remove_child", $StartingLevel)
+	call_deferred("add_child", level6Instance)
+	$Player.set_deferred("position", Vector2(1049, 86))
+	call_deferred("levelChangeBlackFade")
 
 func _ready():
 	
@@ -64,6 +72,7 @@ func _ready():
 	# Global connections for signals
 	GLOBAL.connect("onPlayerEnterLVL1TO2", self, "_on_PlayerEnter_LVL1TO2")
 	GLOBAL.connect("onPlayerEnterLVL1TO3", self, "_on_PlayerEnter_LVL1TO3")
+	GLOBAL.connect("onPlayerEnterLVL1TO6", self, "_on_PlayerEnter_LVL1TO6")
 	GLOBAL.connect("onPlayerEnterLVL2TO1", self, "_on_PlayerEnter_LVL2TO1")
 	GLOBAL.connect("onPlayerEnterLVL3TO1", self, "_on_PlayerEnter_LVL3TO1")
 	GLOBAL.connect("onPlayerEnterLVL3TO4", self, "_on_PlayerEnter_LVL3TO4")
