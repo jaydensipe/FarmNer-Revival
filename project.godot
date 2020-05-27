@@ -91,6 +91,7 @@ Pause={
 [layer_names]
 
 2d_physics/layer_2="Player"
+2d_physics/layer_13="DynamiteSequence"
 2d_physics/layer_14="TheNastyCollision"
 2d_physics/layer_15="BandageGrab"
 2d_physics/layer_16="Enemies"

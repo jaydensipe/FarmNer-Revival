@@ -411,14 +411,11 @@ shape = SubResource( 4 )
 
 [node name="TheNasties" type="Node2D" parent="."]
 
-[node name="TheNasty" parent="TheNasties" instance=ExtResource( 10 )]
-position = Vector2( 1016, 443.899 )
-
 [node name="TheNasty2" parent="TheNasties" instance=ExtResource( 10 )]
-position = Vector2( 1024, 459.899 )
+position = Vector2( 1013.44, 441.407 )
 
 [node name="TheNasty3" parent="TheNasties" instance=ExtResource( 10 )]
-position = Vector2( 1008, 475.899 )
+position = Vector2( 1008, 472 )
 
 [node name="TheNasty4" type="Node2D" parent="TheNasties"]
 position = Vector2( -10.1173, 169.815 )

@@ -11,3 +11,8 @@ func _on_Zone3_body_entered(body):
 # Area portal from Lvl 3 -> 4 
 func _on_Zone2_body_entered(body):
 	GLOBAL.emit_signal("onPlayerEnterLVL3TO4")
+
+
+func _physics_process(delta):
+	if(GLOBAL.boomHappened == true):
+		$Tiles/BlockFence.clear()

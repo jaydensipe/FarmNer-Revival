@@ -26,7 +26,7 @@ var orbDestroyerUnlocked = false
 
 # Does the player have the dynamite
 
-var dynamiteAquired = false
+var dynamiteAquired = true
 
 # Hurt Player
 
@@ -39,6 +39,10 @@ var bandageCount = 0
 # Orb Kills the player has
 
 var orbKills = 0
+
+# Boom
+
+var boomHappened = false
 
 # Adds 1 bandage to the player
 func addBandage():
@@ -55,3 +59,5 @@ func resetAllGlobalValues():
 	orbKills = 0
 	orbDestroyerUnlocked = false
 	dynamiteAquired = false
+	boomHappened = false
+

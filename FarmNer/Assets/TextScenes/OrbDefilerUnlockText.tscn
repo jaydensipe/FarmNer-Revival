@@ -175,9 +175,9 @@ __meta__ = {
 modulate = Color( 0.678431, 0, 0, 0 )
 material = SubResource( 2 )
 margin_left = 0.288208
-margin_top = -0.415947
+margin_top = -2.85436
 margin_right = 3456.29
-margin_bottom = 514.584
+margin_bottom = 512.146
 custom_fonts/font = SubResource( 3 )
 text = "Eradicate the Orbs...
 Release your Daughter..."
