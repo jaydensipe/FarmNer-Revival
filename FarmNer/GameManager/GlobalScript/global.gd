@@ -28,7 +28,7 @@ signal turnOffFlashlight
 
 # Does the player have the orb killer unlocked
 
-var orbDestroyerUnlocked = true
+var orbDestroyerUnlocked = false
 
 # Does the player have the dynamite
 
@@ -72,4 +72,3 @@ func resetAllGlobalValues():
 	boomHappened = false
 	brainOrbIsDead = false
 	playerDead = false
-

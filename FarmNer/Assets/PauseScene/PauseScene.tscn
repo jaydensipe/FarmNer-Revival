@@ -3,14 +3,14 @@
 [ext_resource path="res://FarmNer/Assets/Fonts/Perfect DOS VGA 437 Win.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://FarmNer/Assets/PauseScene/PauseScene.gd" type="Script" id=2]
 
-[sub_resource type="Shader" id=2]
+[sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
 render_mode unshaded;"
 
-[sub_resource type="ShaderMaterial" id=3]
-shader = SubResource( 2 )
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=3]
 size = 256
 font_data = ExtResource( 1 )
 
@@ -19,12 +19,12 @@ pause_mode = 2
 script = ExtResource( 2 )
 
 [node name="Label3" type="Label" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 528.0
 margin_top = 149.154
 margin_right = 1392.0
 margin_bottom = 405.154
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.352941, 0.184314, 0, 1 )
 text = "PAUSED"
 __meta__ = {
@@ -32,12 +32,12 @@ __meta__ = {
 }
 
 [node name="Label2" type="Label" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 528.0
 margin_top = 133.739
 margin_right = 1392.0
 margin_bottom = 389.739
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.568627, 0.294118, 0, 1 )
 text = "PAUSED"
 __meta__ = {
@@ -45,12 +45,12 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-material = SubResource( 3 )
+material = SubResource( 2 )
 margin_left = 528.0
 margin_top = 118.325
 margin_right = 1392.0
 margin_bottom = 374.325
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0.784314, 0.403922, 0, 1 )
 text = "PAUSED"
 __meta__ = {

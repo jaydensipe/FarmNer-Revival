@@ -138,6 +138,7 @@ tracks/11/keys = {
 }
 
 [node name="PathUnlockedText" type="Node2D"]
+z_index = 200
 script = ExtResource( 2 )
 
 [node name="Label3" type="Label" parent="."]

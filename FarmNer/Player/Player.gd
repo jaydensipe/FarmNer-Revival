@@ -147,7 +147,6 @@ func _player_Take_Damage():
 			if (playerIsDead == false):
 				GLOBAL.playerDead = true
 				playerIsDead = true
-				GLOBAL.resetAllGlobalValues()
 		$AttackDelayTimer.start()
 		canTakeDamage = false
 

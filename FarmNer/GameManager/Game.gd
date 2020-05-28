@@ -20,6 +20,7 @@ var level6Instance = level6.instance()
 # End animation played
 
 var endAnimationPlayed = false
+var endDeathAnimation = false
 
 # Changes from Lvl 1 -> 2
 func _on_PlayerEnter_LVL1TO2():
@@ -89,11 +90,16 @@ func _process(delta):
 		$Player/BlackFade/AnimationPlayer.play("FadeOutWhite")
 		endAnimationPlayed = true
 		
-	if (GLOBAL.playerDead == true):
+	if (GLOBAL.playerDead == true && endDeathAnimation == false):
 		$Player/BlackFade/AnimationPlayer.play("FadeOutDead")
+		get_tree().paused = true
+		$Player/BlackFade/AnimationPlayer.playback_speed = 2
+		endDeathAnimation = true
 		
 
 func _ready():
+	
+	get_tree().paused = false
 	
 	# Loads starting level
 	
