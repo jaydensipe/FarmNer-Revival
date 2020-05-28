@@ -19,6 +19,7 @@ var canHeal = true
 
 # Player health
 var playerHealth = 120
+var playerIsDead = false
 
 # Makes enemies target player
 func _ready():
@@ -143,8 +144,10 @@ func _player_Take_Damage():
 		
 		# What happens when player dies
 		if (playerHealth <= 0):
-			get_tree().reload_current_scene()
-			GLOBAL.resetAllGlobalValues()
+			if (playerIsDead == false):
+				GLOBAL.playerDead = true
+				playerIsDead = true
+				GLOBAL.resetAllGlobalValues()
 		$AttackDelayTimer.start()
 		canTakeDamage = false
 
@@ -199,6 +202,8 @@ func _bandage_Finished():
 		
 		if (playerHealth > 120):
 			playerHealth = 120
+
+	
 	
 
 		

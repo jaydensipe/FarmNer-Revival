@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://FarmNer/Player/spritesheet.png" type="Texture" id=1]
 [ext_resource path="res://FarmNer/Player/Player.gd" type="Script" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://FarmNer/Assets/OrbKillBar/OrbKillBar.tscn" type="PackedScene" id=12]
 [ext_resource path="res://FarmNer/Assets/TextScenes/OrbDefilerUnlockText.tscn" type="PackedScene" id=13]
 [ext_resource path="res://FarmNer/Assets/TextScenes/PathUnlocked.tscn" type="PackedScene" id=14]
+[ext_resource path="res://FarmNer/Assets/TextScenes/YouHaveDied.tscn" type="PackedScene" id=15]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -41,187 +42,187 @@ region = Rect2( 80, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 32, 16, 16 )
+region = Rect2( 48, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 32, 16, 16 )
+region = Rect2( 0, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 32, 16, 16 )
+region = Rect2( 16, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 32, 16, 16 )
+region = Rect2( 32, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 32, 16, 16 )
+region = Rect2( 48, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 32, 16, 16 )
+region = Rect2( 64, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 32, 16, 16 )
+region = Rect2( 80, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 96, 16, 16 )
+region = Rect2( 48, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 96, 16, 16 )
+region = Rect2( 0, 0, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 96, 16, 16 )
+region = Rect2( 32, 96, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 96, 16, 16 )
+region = Rect2( 0, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=18]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 96, 16, 16 )
+region = Rect2( 16, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=19]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 96, 16, 16 )
+region = Rect2( 32, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=20]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 96, 16, 16 )
+region = Rect2( 48, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=21]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 48, 16, 16 )
+region = Rect2( 64, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=22]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 48, 16, 16 )
+region = Rect2( 80, 16, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=23]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 48, 16, 16 )
+region = Rect2( 0, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=24]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 48, 16, 16 )
+region = Rect2( 16, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=25]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 48, 16, 16 )
+region = Rect2( 32, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=26]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 48, 16, 16 )
+region = Rect2( 48, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 16, 16, 16 )
+region = Rect2( 64, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 16, 16, 16 )
+region = Rect2( 80, 112, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 16, 16, 16 )
+region = Rect2( 0, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 16, 16, 16 )
+region = Rect2( 16, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 16, 16, 16 )
+region = Rect2( 32, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 16, 16, 16 )
+region = Rect2( 48, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 16, 16 )
+region = Rect2( 64, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 112, 16, 16 )
+region = Rect2( 80, 64, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 112, 16, 16 )
+region = Rect2( 0, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 112, 16, 16 )
+region = Rect2( 16, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 112, 16, 16 )
+region = Rect2( 32, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=38]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 112, 16, 16 )
+region = Rect2( 48, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=39]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 112, 16, 16 )
+region = Rect2( 64, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 80, 16, 16 )
+region = Rect2( 80, 32, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 80, 16, 16 )
+region = Rect2( 0, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=42]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 80, 16, 16 )
+region = Rect2( 16, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=43]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 80, 16, 16 )
+region = Rect2( 32, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=44]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 80, 16, 16 )
+region = Rect2( 48, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=45]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 80, 16, 16 )
+region = Rect2( 64, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=46]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 64, 16, 16 )
+region = Rect2( 80, 48, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=47]
 atlas = ExtResource( 1 )
-region = Rect2( 0, 64, 16, 16 )
+region = Rect2( 0, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=48]
 atlas = ExtResource( 1 )
-region = Rect2( 16, 64, 16, 16 )
+region = Rect2( 16, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=49]
 atlas = ExtResource( 1 )
-region = Rect2( 32, 64, 16, 16 )
+region = Rect2( 32, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=50]
 atlas = ExtResource( 1 )
-region = Rect2( 48, 64, 16, 16 )
+region = Rect2( 48, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=51]
 atlas = ExtResource( 1 )
-region = Rect2( 64, 64, 16, 16 )
+region = Rect2( 64, 80, 16, 16 )
 
 [sub_resource type="AtlasTexture" id=52]
 atlas = ExtResource( 1 )
-region = Rect2( 80, 64, 16, 16 )
+region = Rect2( 80, 80, 16, 16 )
 
 [sub_resource type="SpriteFrames" id=53]
 animations = [ {
@@ -232,57 +233,57 @@ animations = [ {
 }, {
 "frames": [ SubResource( 7 ) ],
 "loop": true,
-"name": "IdleLeft",
+"name": "IdleDown",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
 "loop": true,
-"name": "Left",
+"name": "Right",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 14 ) ],
 "loop": true,
-"name": "IdleRight",
+"name": "IdleLeft",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
-"loop": true,
-"name": "Right",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ) ],
-"loop": true,
-"name": "LeftUp",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
-"loop": true,
-"name": "LeftDown",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 33 ) ],
+"frames": [ SubResource( 15 ) ],
 "loop": true,
 "name": "IdleUp",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ) ],
+"frames": [ SubResource( 16 ) ],
+"loop": true,
+"name": "IdleRight",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ) ],
+"loop": true,
+"name": "LeftDown",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ) ],
 "loop": true,
 "name": "RightDown",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ) ],
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
 "loop": true,
-"name": "RightUp",
+"name": "Up",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 46 ) ],
+"frames": [ SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ) ],
 "loop": true,
-"name": "IdleDown",
+"name": "Left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 44 ), SubResource( 45 ), SubResource( 46 ) ],
+"loop": true,
+"name": "LeftUp",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 47 ), SubResource( 48 ), SubResource( 49 ), SubResource( 50 ), SubResource( 51 ), SubResource( 52 ) ],
 "loop": true,
-"name": "Up",
+"name": "RightUp",
 "speed": 5.0
 } ]
 
@@ -300,7 +301,11 @@ script = ExtResource( 2 )
 [node name="PathUnlockedText" parent="." instance=ExtResource( 14 )]
 position = Vector2( -122.066, 18.1098 )
 scale = Vector2( 0.071267, 0.0709115 )
-z_index = 99
+z_index = 150
+
+[node name="YouHaveDied" parent="." instance=ExtResource( 15 )]
+position = Vector2( -142.354, -56.9417 )
+scale = Vector2( 0.0827986, 0.0882406 )
 
 [node name="OrbDefilerUnlockText" parent="." instance=ExtResource( 13 )]
 position = Vector2( -119.131, 18.2114 )
@@ -310,6 +315,11 @@ z_index = 99
 [node name="BandageSound" parent="." instance=ExtResource( 10 )]
 position = Vector2( 0, 4 )
 scale = Vector2( 0.0326846, 0.0326846 )
+
+[node name="BandageBar" parent="." instance=ExtResource( 7 )]
+position = Vector2( 120, -46.8647 )
+scale = Vector2( 0.023, 0.023 )
+z_index = 99
 
 [node name="HeartbeatSound" parent="." instance=ExtResource( 9 )]
 position = Vector2( 0, 4 )
@@ -322,11 +332,6 @@ scale = Vector2( 0.0326846, 0.0326846 )
 [node name="HealthBar" parent="." instance=ExtResource( 6 )]
 position = Vector2( 88, -60 )
 scale = Vector2( 0.0326846, 0.0326846 )
-z_index = 99
-
-[node name="BandageBar" parent="." instance=ExtResource( 7 )]
-position = Vector2( 120, -46.8647 )
-scale = Vector2( 0.023, 0.023 )
 z_index = 99
 
 [node name="OrbKillBar" parent="." instance=ExtResource( 12 )]

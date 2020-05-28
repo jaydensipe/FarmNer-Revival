@@ -17,6 +17,10 @@ var level4Instance = level4.instance()
 var level5Instance = level5.instance()
 var level6Instance = level6.instance()
 
+# End animation played
+
+var endAnimationPlayed = false
+
 # Changes from Lvl 1 -> 2
 func _on_PlayerEnter_LVL1TO2():
 	call_deferred("remove_child", $StartingLevel)
@@ -81,9 +85,13 @@ func _on_PlayerEnter_LVL5TO3():
 	call_deferred("levelChangeBlackFade")
 
 func _process(delta):
-	if (GLOBAL.brainOrbIsDead == true):
-		$Player/BlackFade/ColorRect.color = Color(1, 1, 1, 1)
-		$Player/BlackFade/AnimationPlayer.play("FadeIn")
+	if (GLOBAL.brainOrbIsDead == true && endAnimationPlayed == false):
+		$Player/BlackFade/AnimationPlayer.play("FadeOutWhite")
+		endAnimationPlayed = true
+		
+	if (GLOBAL.playerDead == true):
+		$Player/BlackFade/AnimationPlayer.play("FadeOutDead")
+		
 
 func _ready():
 	

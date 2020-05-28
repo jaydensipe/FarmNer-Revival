@@ -46,6 +46,10 @@ var bandageCount = 0
 
 var orbKills = 0
 
+# Is player dead
+
+var playerDead = false
+
 # Boom
 
 var boomHappened = false
@@ -67,4 +71,5 @@ func resetAllGlobalValues():
 	dynamiteAquired = false
 	boomHappened = false
 	brainOrbIsDead = false
+	playerDead = false
 
