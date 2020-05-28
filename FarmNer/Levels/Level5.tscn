@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://FarmNer/Levels/Level5.gd" type="Script" id=1]
 [ext_resource path="res://FarmNer/Assets/Tileset/RocksPathTilesTileset.tres" type="TileSet" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://FarmNer/Assets/Textures/smoke.png" type="Texture" id=15]
 [ext_resource path="res://FarmNer/Sounds/TheNasty/theNastyExplosion.wav" type="AudioStream" id=16]
 [ext_resource path="res://FarmNer/Sounds/TheNasty/theNastySound.wav" type="AudioStream" id=17]
+[ext_resource path="res://FarmNer/Enemy/Enemy.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -255,6 +256,7 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 0.995415 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
+visible = false
 color = Color( 0.0117647, 0, 0.027451, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
@@ -482,14 +484,22 @@ position = Vector2( 296, 320 )
 [node name="Chest2" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 256, 112 )
 
-[node name="Chest3" parent="Chests" instance=ExtResource( 11 )]
-position = Vector2( 480, 288 )
-
 [node name="Chest4" parent="Chests" instance=ExtResource( 11 )]
 position = Vector2( 520, 88 )
 
-[node name="Chest5" parent="Chests" instance=ExtResource( 11 )]
-position = Vector2( 760, 104 )
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Enemy" parent="Enemies" instance=ExtResource( 18 )]
+position = Vector2( 486.238, 153.371 )
+
+[node name="Enemy2" parent="Enemies" instance=ExtResource( 18 )]
+position = Vector2( 651.052, 185.096 )
+
+[node name="Enemy3" parent="Enemies" instance=ExtResource( 18 )]
+position = Vector2( 750.095, 288.008 )
+
+[node name="Enemy4" parent="Enemies" instance=ExtResource( 18 )]
+position = Vector2( 866.161, 205.988 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="tween_completed" from="TheNasties/TheNasty/Tween" to="TheNasties/TheNasty" method="_on_Tween_tween_completed"]
 [connection signal="input_event" from="TheNasties/TheNasty/Area2D" to="TheNasties/TheNasty" method="_on_Area2D_input_event"]

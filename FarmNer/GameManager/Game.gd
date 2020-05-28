@@ -2,12 +2,12 @@ extends Node2D
 
 
 # Preloading levels
-var startingLevel = preload("res://FarmNer/Levels/StartingLevel.tscn")
-var level2 = preload("res://FarmNer/Levels/Level2.tscn")
-var level3 = preload("res://FarmNer/Levels/Level3.tscn")
-var level4 = preload("res://FarmNer/Levels/Level4.tscn")
-var level5 = preload("res://FarmNer/Levels/Level5.tscn")
-var level6 = preload("res://FarmNer/Levels/EndLevel.tscn")
+var startingLevel = load("res://FarmNer/Levels/StartingLevel.tscn")
+var level2 = load("res://FarmNer/Levels/Level2.tscn")
+var level3 = load("res://FarmNer/Levels/Level3.tscn")
+var level4 = load("res://FarmNer/Levels/Level4.tscn")
+var level5 = load("res://FarmNer/Levels/Level5.tscn")
+var level6 = load("res://FarmNer/Levels/EndLevel.tscn")
 
 # Level Instances
 var startingLevelInstance = startingLevel.instance()

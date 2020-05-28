@@ -13,6 +13,7 @@ func showDeathUnlock():
 	if (GLOBAL.playerDead == true && canShowText == true):
 		$AnimationPlayer.play("ShowText")
 		$Label4.disabled = false
+		$Label4.mouse_filter = 0
 		canShowText = false
 
 
