@@ -6,6 +6,7 @@ var startingLevel = preload("res://FarmNer/Levels/StartingLevel.tscn")
 var level2 = preload("res://FarmNer/Levels/Level2.tscn")
 var level3 = preload("res://FarmNer/Levels/Level3.tscn")
 var level4 = preload("res://FarmNer/Levels/Level4.tscn")
+var level5 = preload("res://FarmNer/Levels/Level5.tscn")
 var level6 = preload("res://FarmNer/Levels/EndLevel.tscn")
 
 # Level Instances
@@ -13,6 +14,7 @@ var startingLevelInstance = startingLevel.instance()
 var level2Instance = level2.instance()
 var level3Instance = level3.instance()
 var level4Instance = level4.instance()
+var level5Instance = level5.instance()
 var level6Instance = level6.instance()
 
 # Changes from Lvl 1 -> 2
@@ -27,6 +29,13 @@ func _on_PlayerEnter_LVL1TO3():
 	call_deferred("remove_child", $StartingLevel)
 	call_deferred("add_child", level3Instance)
 	$Player.set_deferred("position", Vector2(762, 83))
+	call_deferred("levelChangeBlackFade")
+	
+# Changes from Lvl 1 -> 6
+func _on_PlayerEnter_LVL1TO6():
+	call_deferred("remove_child", $StartingLevel)
+	call_deferred("add_child", level6Instance)
+	$Player.set_deferred("position", Vector2(1049, 86))
 	call_deferred("levelChangeBlackFade")
 
 # Changes from Lvl 2 -> 1
@@ -49,6 +58,13 @@ func _on_PlayerEnter_LVL3TO4():
 	call_deferred("add_child", level4Instance)
 	$Player.set_deferred("position", Vector2(1038, 280))
 	call_deferred("levelChangeBlackFade")
+
+# Changes from Lvl 3 -> 5	
+func _on_PlayerEnter_LVL3TO5():
+	call_deferred("remove_child", $Level3)
+	call_deferred("add_child", level5Instance)
+	$Player.set_deferred("position", Vector2(256, 216))
+	call_deferred("levelChangeBlackFade")
 	
 # Changes from Lvl 4 -> 3
 func _on_PlayerEnter_LVL4TO3():
@@ -57,10 +73,11 @@ func _on_PlayerEnter_LVL4TO3():
 	$Player.set_deferred("position", Vector2(285, 125))
 	call_deferred("levelChangeBlackFade")
 	
-func _on_PlayerEnter_LVL1TO6():
-	call_deferred("remove_child", $StartingLevel)
-	call_deferred("add_child", level6Instance)
-	$Player.set_deferred("position", Vector2(1049, 86))
+# Changes from Lvl 5 -> 3
+func _on_PlayerEnter_LVL5TO3():
+	call_deferred("remove_child", $Level5)
+	call_deferred("add_child", level3Instance)
+	$Player.set_deferred("position", Vector2(1032, 232))
 	call_deferred("levelChangeBlackFade")
 
 func _ready():
@@ -76,7 +93,10 @@ func _ready():
 	GLOBAL.connect("onPlayerEnterLVL2TO1", self, "_on_PlayerEnter_LVL2TO1")
 	GLOBAL.connect("onPlayerEnterLVL3TO1", self, "_on_PlayerEnter_LVL3TO1")
 	GLOBAL.connect("onPlayerEnterLVL3TO4", self, "_on_PlayerEnter_LVL3TO4")
+	GLOBAL.connect("onPlayerEnterLVL3TO5", self, "_on_PlayerEnter_LVL3TO5")
 	GLOBAL.connect("onPlayerEnterLVL4TO3", self, "_on_PlayerEnter_LVL4TO3")
+	GLOBAL.connect("onPlayerEnterLVL5TO3", self, "_on_PlayerEnter_LVL5TO3")
+	
 	
 	# Fades audio and screen in at beginning
 	$Player/BlackFade/AnimationPlayer.play("FadeIn")

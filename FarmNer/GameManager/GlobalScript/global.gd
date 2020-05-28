@@ -5,12 +5,14 @@ extends Node
 # Level Changing Signals
 
 signal onPlayerEnterLVL1TO2
+signal onPlayerEnterLVL1TO6
 signal onPlayerEnterLVL2TO1
 signal onPlayerEnterLVL1TO3
 signal onPlayerEnterLVL3TO1
 signal onPlayerEnterLVL3TO4
+signal onPlayerEnterLVL3TO5
 signal onPlayerEnterLVL4TO3
-signal onPlayerEnterLVL1TO6
+signal onPlayerEnterLVL5TO3
 
 # Current level of player
 
@@ -26,7 +28,7 @@ var orbDestroyerUnlocked = false
 
 # Does the player have the dynamite
 
-var dynamiteAquired = true
+var dynamiteAquired = false
 
 # Hurt Player
 

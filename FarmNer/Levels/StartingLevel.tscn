@@ -16,7 +16,7 @@
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=14]
 [ext_resource path="res://FarmNer/Assets/Textures/nastyWall.png" type="Texture" id=15]
 [ext_resource path="res://FarmNer/Assets/TheNasty/TheNastySound.tscn" type="PackedScene" id=16]
-[ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.gd" type="Script" id=17]
+[ext_resource path="res://FarmNer/Levels/TheNasty4.gd" type="Script" id=17]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -399,7 +399,7 @@ scale = Vector2( 4.85258, 4.14327 )
 shape = SubResource( 4 )
 
 [node name="Zone3" type="Area2D" parent="BlackFadeZones"]
-position = Vector2( -24, 176 )
+position = Vector2( -54.2414, 179.265 )
 scale = Vector2( 1.17262, 1.16204 )
 collision_layer = 131072
 collision_mask = 131072

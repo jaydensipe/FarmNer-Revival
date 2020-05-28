@@ -178,11 +178,11 @@ points = PoolVector2Array( 9.92597, 11.9778, 10.0558, 14.1197, 5.96674, 13.9899,
 22/shapes = [  ]
 22/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=4]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=5]
 
-[sub_resource type="Shader" id=10]
+[sub_resource type="Shader" id=6]
 code = "shader_type canvas_item;
 
 uniform vec4 outline_color : hint_color;
@@ -223,26 +223,26 @@ void fragment()
 }
 "
 
-[sub_resource type="OpenSimplexNoise" id=11]
+[sub_resource type="OpenSimplexNoise" id=7]
 octaves = 9
 
-[sub_resource type="NoiseTexture" id=12]
+[sub_resource type="NoiseTexture" id=8]
 width = 2048
 height = 2048
-noise = SubResource( 11 )
+noise = SubResource( 7 )
 
-[sub_resource type="ShaderMaterial" id=13]
+[sub_resource type="ShaderMaterial" id=9]
 resource_local_to_scene = true
-shader = SubResource( 10 )
+shader = SubResource( 6 )
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 shader_param/isOrbDead = false
 shader_param/turnOn = 0.0
 shader_param/value = 1.0
-shader_param/noise_texture = SubResource( 12 )
+shader_param/noise_texture = SubResource( 8 )
 
-[sub_resource type="CircleShape2D" id=14]
+[sub_resource type="CircleShape2D" id=10]
 
-[sub_resource type="RectangleShape2D" id=15]
+[sub_resource type="RectangleShape2D" id=11]
 
 [node name="EndLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -343,7 +343,7 @@ collision_mask = 131072
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BlackFadeZones/Zone1"]
 position = Vector2( 57.525, 4.15701 )
 scale = Vector2( 4.85258, 4.14327 )
-shape = SubResource( 8 )
+shape = SubResource( 4 )
 
 [node name="TheNasties" type="Node2D" parent="."]
 position = Vector2( -83.7523, 63.979 )
@@ -368,18 +368,18 @@ mode = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/StaticBody2D"]
 position = Vector2( -3.16492, 2.24607 )
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="TheNasties/TheNasty"]
-material = SubResource( 13 )
+material = SubResource( 9 )
 position = Vector2( -5.64497, 24.3414 )
 texture = ExtResource( 8 )
 region_rect = Rect2( 8, -8, 88, 56 )
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="TheNasties/TheNasty"]
-position = Vector2( -3.47111, 1.10718 )
+position = Vector2( -10.8298, 1.20703 )
 rotation = -1.58388
-scale = Vector2( 0.0994994, 0.0837788 )
+scale = Vector2( 0.0526397, 0.0443228 )
 amount = 16
 speed_scale = 0.5
 texture = ExtResource( 6 )
@@ -397,7 +397,7 @@ collision_mask = 8192
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/Area2D"]
 position = Vector2( -3.16492, 1.41275 )
 scale = Vector2( 0.922848, 0.922848 )
-shape = SubResource( 14 )
+shape = SubResource( 10 )
 
 [node name="PlayerCollisionNasty" type="Area2D" parent="TheNasties/TheNasty"]
 scale = Vector2( 1.48689, 1.48689 )
@@ -407,7 +407,7 @@ collision_mask = 8192
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TheNasties/TheNasty/PlayerCollisionNasty"]
 position = Vector2( -3.16492, 2.24607 )
 scale = Vector2( 3.06093, 3.06093 )
-shape = SubResource( 15 )
+shape = SubResource( 11 )
 [connection signal="body_entered" from="BlackFadeZones/Zone1" to="." method="_on_Zone1_body_entered"]
 [connection signal="tween_completed" from="TheNasties/TheNasty/Tween" to="TheNasties/TheNasty" method="_on_Tween_tween_completed"]
 [connection signal="input_event" from="TheNasties/TheNasty/Area2D" to="TheNasties/TheNasty" method="_on_Area2D_input_event"]
