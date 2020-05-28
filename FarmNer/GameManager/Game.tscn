@@ -17,7 +17,7 @@ z_index = 1
 [node name="BlackFade" parent="Player" instance=ExtResource( 4 )]
 position = Vector2( -168.023, -91.9354 )
 scale = Vector2( 0.598438, 0.628593 )
-z_index = 100
+z_index = 150
 
 [node name="BloodScreen" parent="Player" instance=ExtResource( 8 )]
 scale = Vector2( 0.421572, 0.421572 )

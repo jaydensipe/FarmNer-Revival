@@ -10,9 +10,9 @@
 [ext_resource path="res://FarmNer/Assets/Textures/nastyEatingDaughter.png" type="Texture" id=8]
 [ext_resource path="res://FarmNer/Assets/TilesetScenes/TilesetGraveyard.png" type="Texture" id=9]
 [ext_resource path="res://FarmNer/Assets/Torch/Torch.tscn" type="PackedScene" id=10]
+[ext_resource path="res://FarmNer/Levels/BrainTheNasty.gd" type="Script" id=11]
 [ext_resource path="res://FarmNer/Assets/Textures/lightTexture.png" type="Texture" id=12]
 [ext_resource path="res://FarmNer/Assets/TheNasty/TheNastySound.tscn" type="PackedScene" id=15]
-[ext_resource path="res://FarmNer/Assets/TheNasty/TheNasty.gd" type="Script" id=16]
 
 [sub_resource type="Environment" id=1]
 background_mode = 4
@@ -350,7 +350,7 @@ position = Vector2( -83.7523, 63.979 )
 
 [node name="TheNasty" type="Node2D" parent="TheNasties"]
 position = Vector2( 962.187, 54.8053 )
-script = ExtResource( 16 )
+script = ExtResource( 11 )
 
 [node name="Tween" type="Tween" parent="TheNasties/TheNasty"]
 

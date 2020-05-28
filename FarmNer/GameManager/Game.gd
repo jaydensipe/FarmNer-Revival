@@ -80,6 +80,11 @@ func _on_PlayerEnter_LVL5TO3():
 	$Player.set_deferred("position", Vector2(1032, 232))
 	call_deferred("levelChangeBlackFade")
 
+func _process(delta):
+	if (GLOBAL.brainOrbIsDead == true):
+		$Player/BlackFade/ColorRect.color = Color(1, 1, 1, 1)
+		$Player/BlackFade/AnimationPlayer.play("FadeIn")
+
 func _ready():
 	
 	# Loads starting level

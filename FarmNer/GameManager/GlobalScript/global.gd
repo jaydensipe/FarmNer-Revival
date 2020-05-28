@@ -18,13 +18,17 @@ signal onPlayerEnterLVL5TO3
 
 var currentLevelPlayer = 1
 
+# Brain orb is dead?
+
+var brainOrbIsDead = false
+
 # Turn off flashlight signal
 
 signal turnOffFlashlight
 
 # Does the player have the orb killer unlocked
 
-var orbDestroyerUnlocked = false
+var orbDestroyerUnlocked = true
 
 # Does the player have the dynamite
 
@@ -62,4 +66,5 @@ func resetAllGlobalValues():
 	orbDestroyerUnlocked = false
 	dynamiteAquired = false
 	boomHappened = false
+	brainOrbIsDead = false
 
