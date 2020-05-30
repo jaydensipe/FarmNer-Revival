@@ -256,7 +256,6 @@ script = ExtResource( 1 )
 scale = Vector2( 1, 0.995415 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="Level"]
-visible = false
 color = Color( 0.0117647, 0, 0.027451, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Level"]
@@ -322,7 +321,7 @@ __meta__ = {
 }
 
 [node name="Torch" parent="Lighting" instance=ExtResource( 6 )]
-position = Vector2( 328, 72 )
+position = Vector2( 328, 66.7297 )
 
 [node name="Torch2" parent="Lighting" instance=ExtResource( 6 )]
 position = Vector2( 464, 64 )
@@ -331,7 +330,7 @@ position = Vector2( 464, 64 )
 position = Vector2( 592, 64 )
 
 [node name="Torch7" parent="Lighting" instance=ExtResource( 6 )]
-position = Vector2( 712, 72 )
+position = Vector2( 712, 63.6292 )
 
 [node name="Torch5" parent="Lighting" instance=ExtResource( 6 )]
 position = Vector2( 1040, 152 )

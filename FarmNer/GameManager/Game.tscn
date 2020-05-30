@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://FarmNer/Assets/PauseScene/PauseScene.tscn" type="PackedScene" id=1]
 [ext_resource path="res://FarmNer/Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://FarmNer/Sounds/Ambiance/AmbianceAudioForBright.tscn" type="PackedScene" id=3]
 [ext_resource path="res://FarmNer/Assets/BlackFade/BlackFade.tscn" type="PackedScene" id=4]
 [ext_resource path="res://FarmNer/Sounds/Ambiance/AmbianceScene.tscn" type="PackedScene" id=5]
 [ext_resource path="res://FarmNer/GameManager/Game.gd" type="Script" id=6]
@@ -30,5 +31,7 @@ visible = false
 position = Vector2( -185.213, -80.7962 )
 scale = Vector2( 0.195872, 0.195872 )
 z_index = 100
+
+[node name="AmbianceAudioForBright" parent="." instance=ExtResource( 3 )]
 
 [node name="AmbianceAudio" parent="." instance=ExtResource( 5 )]

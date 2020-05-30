@@ -357,4 +357,8 @@ __meta__ = {
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/ShowText = SubResource( 4 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 [connection signal="pressed" from="Label4" to="." method="_on_Label4_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

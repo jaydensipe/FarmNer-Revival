@@ -399,7 +399,7 @@ scale = Vector2( 4.85258, 4.14327 )
 shape = SubResource( 4 )
 
 [node name="Zone3" type="Area2D" parent="BlackFadeZones"]
-position = Vector2( -7.13178, 173.873 )
+position = Vector2( -53.2223, 175.003 )
 scale = Vector2( 1.17262, 1.16204 )
 collision_layer = 131072
 collision_mask = 131072

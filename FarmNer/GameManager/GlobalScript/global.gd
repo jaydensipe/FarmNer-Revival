@@ -54,6 +54,10 @@ var playerDead = false
 
 var boomHappened = false
 
+# Variable to end the game
+var endGame = false
+
+
 # Adds 1 bandage to the player
 func addBandage():
 	bandageCount += 1
@@ -72,3 +76,4 @@ func resetAllGlobalValues():
 	boomHappened = false
 	brainOrbIsDead = false
 	playerDead = false
+	endGame = false

@@ -8,6 +8,8 @@ var level3 = load("res://FarmNer/Levels/Level3.tscn")
 var level4 = load("res://FarmNer/Levels/Level4.tscn")
 var level5 = load("res://FarmNer/Levels/Level5.tscn")
 var level6 = load("res://FarmNer/Levels/EndLevel.tscn")
+var level7 = load("res://FarmNer/Levels/EndLevelBright.tscn")
+var endLevel = load("res://FarmNer/Levels/EndLevelEND.tscn")
 
 # Level Instances
 var startingLevelInstance = startingLevel.instance()
@@ -16,11 +18,15 @@ var level3Instance = level3.instance()
 var level4Instance = level4.instance()
 var level5Instance = level5.instance()
 var level6Instance = level6.instance()
+var level7Instance = level7.instance()
+var endLevelInstance = endLevel.instance()
 
 # End animation played
 
 var endAnimationPlayed = false
 var endDeathAnimation = false
+
+var alreadyEnded = false
 
 # Changes from Lvl 1 -> 2
 func _on_PlayerEnter_LVL1TO2():
@@ -86,15 +92,53 @@ func _on_PlayerEnter_LVL5TO3():
 	call_deferred("levelChangeBlackFade")
 
 func _process(delta):
+	# Triggers end of game
 	if (GLOBAL.brainOrbIsDead == true && endAnimationPlayed == false):
 		$Player/BlackFade/AnimationPlayer.play("FadeOutWhite")
 		endAnimationPlayed = true
+		# YIELD IS THE BEST FUNCTION IN GODOT!!!! WHY DID I MAKE MILLION TIMERS!!!
+		yield($Player/BlackFade/AnimationPlayer, "animation_finished")
+		$Player/BlackFade/AnimationPlayer.play_backwards("FadeOutWhite")
+		call_deferred("remove_child", $EndLevel)
+		$Player/Flashlight.set_process(false)
+		$Player/Flashlight.hide()
+		$Player/BandageBar.set_process(false)
+		$Player/BandageBar.hide()
+		$Player/HealthBar.set_process(false)
+		$Player/HealthBar.hide()
+		$Player/OrbKillBar.set_process(false)
+		$Player/OrbKillBar.hide()
+		$Player/Light2D.hide()
+		$Player/Flashlight/FlashLightSound/Off.volume_db = -50
+		$Player/Flashlight/FlashLightSound/On.volume_db = -50
+		$AmbianceAudioForBright/AudioStreamPlayer.play()
+		$AmbianceAudio/AudioStreamPlayer.stop()
+		call_deferred("add_child", level7Instance)
 		
 	if (GLOBAL.playerDead == true && endDeathAnimation == false):
 		$Player/BlackFade/AnimationPlayer.play("FadeOutDead")
 		get_tree().paused = true
 		$Player/BlackFade/AnimationPlayer.playback_speed = 2
 		endDeathAnimation = true
+		
+	if (GLOBAL.endGame == true && alreadyEnded == false):
+		call_deferred("remove_child", $EndLevelBright)
+		call_deferred("add_child", endLevelInstance)
+		$Player/Flashlight.set_process(true)
+		$Player/Flashlight.show()
+		$Player/BandageBar.set_process(true)
+		$Player/BandageBar.show()
+		$Player/HealthBar.set_process(true)
+		$Player/HealthBar.show()
+		$Player/OrbKillBar.set_process(true)
+		$Player/OrbKillBar.show()
+		$Player/Light2D.show()
+		$Player/Flashlight/FlashLightSound/Off.volume_db = 0.0
+		$Player/Flashlight/FlashLightSound/On.volume_db = 0.0
+		$Player.playerHealth = 30
+		$Player/HeartbeatSound/AudioStreamPlayer.play()
+		
+		alreadyEnded == true
 		
 
 func _ready():

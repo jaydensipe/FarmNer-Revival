@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/daughterScream.wav-1fcae325a837065145d0b7959d6f8169.sample"
+
+[deps]
+
+source_file="res://FarmNer/Assets/Textures/daughterScream.wav"
+dest_files=[ "res://.import/daughterScream.wav-1fcae325a837065145d0b7959d6f8169.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://FarmNer/Assets/Textures/flowers.png" type="Texture" id=1]
+
+[node name="FlowersTile" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 3, 2, 7, 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 16, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 13, 1, 9, 10 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 25, 1, 7, 11 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 24, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 1, 13, 11, 11 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( 32, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 12, 12, 11, 10 )
+
+[node name="Sprite6" type="Sprite" parent="."]
+position = Vector2( 40, 0 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 26, 12, 11, 10 )
