@@ -4,4 +4,4 @@ FarmNer was the second game I've ever created. It was made using the Godot game 
 
 Released at: https://jaydensippy.itch.io/farmner
 
-![photo](https://jaydensipe.github.io/images/farmnerpic.webp)
+![photo](https://jaydensipe.com/_app/immutable/assets/farmnerpic.DPdP8785.avif)
